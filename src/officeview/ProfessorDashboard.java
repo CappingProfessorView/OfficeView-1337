@@ -43,6 +43,11 @@ public class ProfessorDashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Office View - Dashboard");
         setName("Professor Dashboard Main Frame"); // NOI18N
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         ProfessorDashboardSatusFrame.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -161,18 +166,21 @@ public class ProfessorDashboard extends javax.swing.JFrame {
         this.Available.setSelected(true);
         this.Busy.setSelected(false);
         this.BeBackSoon.setSelected(false);
+        this.CurrentActiveStatus.setText("Available");
     }//GEN-LAST:event_AvailableActionPerformed
 
     private void BusyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusyActionPerformed
         this.Available.setSelected(false);
         this.Busy.setSelected(true);
         this.BeBackSoon.setSelected(false);
+        this.CurrentActiveStatus.setText("Busy");
     }//GEN-LAST:event_BusyActionPerformed
 
     private void BeBackSoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeBackSoonActionPerformed
         this.Available.setSelected(false);
         this.Busy.setSelected(false);
         this.BeBackSoon.setSelected(true);
+        this.CurrentActiveStatus.setText("Be Back Soon");
     }//GEN-LAST:event_BeBackSoonActionPerformed
 
     private void ScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleActionPerformed
@@ -184,6 +192,11 @@ public class ProfessorDashboard extends javax.swing.JFrame {
         //TODO:Set professor status and other things
         this.dispose();
     }//GEN-LAST:event_LogoutActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        this.CurrentActiveStatus.setText("Available");
+        this.Available.setSelected(true);
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
