@@ -26,6 +26,13 @@ public class Professor{
     private String name = null;
     private Schedule schedule = null;
     private String announcement = null; 
+    /* status key: 
+     * 0 = not available
+     * 1 = available
+     * 2 = Busy
+     * 3 = be back soon
+     */
+    private int status = 0;
     
     public Professor(){
         
@@ -68,6 +75,19 @@ public class Professor{
     
     public Schedule getSchedule() {
         return schedule;
+    }
+    
+    public String getStatus(){
+        String temp = "";
+        switch(this.status)
+        {
+            case '1': temp =  "Available"; break;
+            case '2': temp =  "Busy"; break;
+            case '3': temp =  "Be Back Soon"; break;
+            default: temp =  "Not Available";
+                
+        }
+        return temp;
     }
     
 }
