@@ -52,6 +52,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         jLabel2.setText("First:");
 
         SearchByNameButton.setText("Search");
+        SearchByNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchByNameButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SearchByNameTabLayout = new javax.swing.GroupLayout(SearchByNameTab);
         SearchByNameTab.setLayout(SearchByNameTabLayout);
@@ -95,9 +100,14 @@ public class StudentDashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Schoo of:");
+        jLabel3.setText("School of:");
 
         SearchBySchoolButton.setText("Search");
+        SearchBySchoolButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBySchoolButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SearchBySchoolTabLayout = new javax.swing.GroupLayout(SearchBySchoolTab);
         SearchBySchoolTab.setLayout(SearchBySchoolTabLayout);
@@ -107,7 +117,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SchoolComboBox, 0, 279, Short.MAX_VALUE)
+                .addComponent(SchoolComboBox, 0, 277, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchBySchoolTabLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -132,7 +142,7 @@ public class StudentDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -155,6 +165,17 @@ public class StudentDashboard extends javax.swing.JFrame {
     private void SchoolComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchoolComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SchoolComboBoxActionPerformed
+
+    private void SearchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchByNameButtonActionPerformed
+        this.FirstNameBox.getText();
+        this.LastNameBox.getText();
+        //use db search of above
+    }//GEN-LAST:event_SearchByNameButtonActionPerformed
+
+    private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
+        this.SchoolComboBox.getSelectedItem();
+        //use db search of above
+    }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
 
     /**
      * @param args the command line arguments
