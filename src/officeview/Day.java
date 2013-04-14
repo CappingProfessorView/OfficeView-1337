@@ -6,7 +6,7 @@ package officeview;
 
 /**
  *
- * @author Mike
+ * @author Mike M
  * and cake
  */
 public class Day{
