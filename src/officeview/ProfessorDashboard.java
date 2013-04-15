@@ -189,7 +189,7 @@ public class ProfessorDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ScheduleActionPerformed
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
-        //TODO:Set professor status and other things
+        //***TODO:Set professor status and other things***
         this.dispose();
     }//GEN-LAST:event_LogoutActionPerformed
 
