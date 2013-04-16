@@ -15,5 +15,7 @@ public class OfficeView {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        LaunchFrame start = new LaunchFrame();
+        start.setVisible(true);
     }
 }
