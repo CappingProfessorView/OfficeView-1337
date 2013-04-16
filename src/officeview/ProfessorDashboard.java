@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author Mike
@@ -15,6 +17,7 @@ public class ProfessorDashboard extends javax.swing.JFrame {
      */
     public ProfessorDashboard() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**
