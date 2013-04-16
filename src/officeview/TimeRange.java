@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author Mike
@@ -15,6 +17,8 @@ public class TimeRange extends javax.swing.JPanel {
      */
     public TimeRange() {
         initComponents();
+        setMinimumSize(new Dimension(492, 28));
+        setVisible(true);
     }
 
     /**

@@ -830,16 +830,16 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox25ActionPerformed
 
     private void addTimeFrame(){
-        //System.out.println(this.timeRange1.getX());
-        //System.out.println(this.timeRange1.getY());
-        TimeRange blarg = new TimeRange();
-        blarg.setVisible(true);
-        System.out.println(this.TuesdayInnerPanel.getComponentCount());
-        System.out.println(this.TuesdayInnerPanel.add(blarg));
-        this.TuesdayInnerPanel.revalidate();
-        this.TuesdayInnerPanel.repaint();
-        this.pack();
-        System.out.println(this.TuesdayInnerPanel.getComponentCount());
+        TimeRange range = new TimeRange();
+        //System.out.println(this.TuesdayInnerPanel.getComponentCount());
+        System.out.println(TuesdayInnerPanel.add(range));
+        Tuesday.validate();
+        Tuesday.setVisible(true);
+        TuesdayScrollPane.setVisible(true);
+        TuesdayInnerPanel.setVisible(true);
+        range.setVisible(true);
+        System.out.println(range);
+        //System.out.println(this.TuesdayInnerPanel.getComponentCount());
     }
     /**
      * @param args the command line arguments
