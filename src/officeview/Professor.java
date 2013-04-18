@@ -23,9 +23,12 @@ public class Professor{
     /** Order system update date */
     protected Date updateDate = null;
 
-    private String name = null;
+    private String firstName = null;
+    private String lastName = null;
     private Schedule schedule = null;
-    private String announcement = null; 
+    private String announcement = null;
+    private String userName = null;
+    private int passwordHash = 0;
     /* status key: 
      * 0 = not available
      * 1 = available
@@ -34,26 +37,29 @@ public class Professor{
      */
     private int status = 0;
     
-    public Professor(){
-        
+    public Professor(){}
+    
+    public Professor(String userName){
+        this.userName = userName;
+        id = userName.hashCode();
     }
     
-    public Professor(Integer id){
-        this.id = id;
-    }
-    
-    public Professor(String name, Schedule schedule, Integer id){
-        this.name = name;
+    public Professor(String firstName, String lastName, Schedule schedule, String announcement, String userName, String password){
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.schedule = schedule;
-        this.id = id;
+        this.announcement = announcement;
+        this.userName = userName;
+        id = userName.hashCode();
+        passwordHash = password.hashCode();
     }
     
     public Integer getId() {
         return this.id;
     }
     
-    public void setId(Integer id) {
-        this.id = id;
+    private void setId() {
+        id = userName.hashCode();
     }
     
     public String setAnnouncement(String psa){
@@ -90,4 +96,27 @@ public class Professor{
         return temp;
     }
     
+    /*public void setStatus(int i){
+        if(i >= 1 && i <= 3)
+            status = i;
+        else
+            System.out.println("invalid input");
+    }*/
+    
+    public String getUserName(){
+        return userName;
+    }
+    
+    public void setUserName(String un){
+        userName = un;
+        setId();
+    }
+    
+    public int getPasswordHash(){
+        return passwordHash;
+    }
+    
+    public void setPasswordHash(int i){
+        passwordHash = i;
+    }
 }
