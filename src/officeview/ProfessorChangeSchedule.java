@@ -344,7 +344,7 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(116, 116, 116))
-            .addComponent(TuesdayScrollPane)
+            .addComponent(TuesdayScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
         );
         TuesdayLayout.setVerticalGroup(
             TuesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,7 +354,7 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addGap(9, 9, 9)
-                .addComponent(TuesdayScrollPane))
+                .addComponent(TuesdayScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
         );
 
         ProfessorChangeScheduleTabList.addTab("Tuesday", Tuesday);
@@ -818,7 +818,8 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
         TimeRange range = new TimeRange();
         Component comp = range;
         System.out.println(this.TuesdayInnerPanel.add(comp));
-        this.validate();
+        this.revalidate();
+        this.repaint();
         this.TuesdayInnerPanel.setVisible(true);
         System.out.println(this.TuesdayInnerPanel.getComponent(0));
     }//GEN-LAST:event_AddTimeActionPerformed
