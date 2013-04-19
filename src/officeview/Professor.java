@@ -39,18 +39,12 @@ public class Professor{
     
     public Professor(){}
     
-    public Professor(String userName){
-        this.userName = userName;
-        id = userName.hashCode();
-    }
-    
     public Professor(String firstName, String lastName, Schedule schedule, String announcement, String userName, String password){
         this.firstName = firstName;
         this.lastName = lastName;
         this.schedule = schedule;
         this.announcement = announcement;
         this.userName = userName;
-        id = userName.hashCode();
         passwordHash = password.hashCode();
     }
     
@@ -60,6 +54,22 @@ public class Professor{
     
     private void setId() {
         id = userName.hashCode();
+    }
+    
+    public String getFirstName(){
+        return firstName;
+    }
+    
+    public void setFirstName(String fn){
+        firstName = fn;
+    }
+    
+    public String getLastName(){
+        return lastName;
+    }
+    
+    public void setLastName(String ln){
+        lastName = ln;
     }
     
     public String setAnnouncement(String psa){

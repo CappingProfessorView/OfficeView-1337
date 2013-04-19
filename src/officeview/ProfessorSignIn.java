@@ -5,7 +5,6 @@
 package officeview;
 
 import java.awt.Toolkit;
-import order.util.MongoHelper;
 
 /**
  *
@@ -127,14 +126,13 @@ public class ProfessorSignIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProfessorLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfessorLoginActionPerformed
-        Professor prof = new Professor(UsernameField.getText());
-        MongoHelper.setDB("officeview");
-        prof = MongoHelper.fetch(prof, "professors");
-        if(prof == null || new String(PasswordField.getPassword()).hashCode() != prof.getPasswordHash()){
+        String un = UsernameField.getText();
+        int pwh = new String(PasswordField.getPassword()).hashCode();
+        Professor prof = OfficeView.professors.findOne("{userName: '"
+                +un+"', passwordHash: "
+                +pwh+"}").as(Professor.class);
+        if(prof == null)
             System.out.println("Username/password invalid");
-            System.out.println(PasswordField.getPassword());
-            System.out.println(PasswordField.getPassword().hashCode());
-        }
         else{
             ProfessorDashboard dash = new ProfessorDashboard();
             dash.setVisible(true);
