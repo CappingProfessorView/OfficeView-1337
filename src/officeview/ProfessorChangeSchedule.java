@@ -1,5 +1,6 @@
 package officeview;
 
+import java.awt.Component;
 import javax.swing.JFrame;
 
 /*
@@ -343,7 +344,7 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(116, 116, 116))
-            .addComponent(TuesdayScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(TuesdayScrollPane)
         );
         TuesdayLayout.setVerticalGroup(
             TuesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,7 +354,7 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addGap(9, 9, 9)
-                .addComponent(TuesdayScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addComponent(TuesdayScrollPane))
         );
 
         ProfessorChangeScheduleTabList.addTab("Tuesday", Tuesday);
@@ -814,7 +815,12 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox34ActionPerformed
 
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
-        addTimeFrame();
+        TimeRange range = new TimeRange();
+        Component comp = range;
+        System.out.println(this.TuesdayInnerPanel.add(comp));
+        this.validate();
+        this.TuesdayInnerPanel.setVisible(true);
+        System.out.println(this.TuesdayInnerPanel.getComponent(0));
     }//GEN-LAST:event_AddTimeActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
@@ -832,13 +838,13 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     private void addTimeFrame(){
         TimeRange range = new TimeRange();
         //System.out.println(this.TuesdayInnerPanel.getComponentCount());
-        System.out.println(TuesdayInnerPanel.add(range));
-        Tuesday.validate();
-        Tuesday.setVisible(true);
-        TuesdayScrollPane.setVisible(true);
-        TuesdayInnerPanel.setVisible(true);
-        range.setVisible(true);
-        System.out.println(range);
+        //System.out.println(this.TuesdayInnerPanel.add(range, 0));
+        this.validate();
+        //this.Tuesday.setVisible(true);
+        //this.TuesdayScrollPane.setVisible(true);
+        //this.TuesdayInnerPanel.setVisible(true);
+        this.setVisible(true);
+        //System.out.println(range);
         //System.out.println(this.TuesdayInnerPanel.getComponentCount());
     }
     /**

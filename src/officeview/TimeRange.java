@@ -19,6 +19,7 @@ public class TimeRange extends javax.swing.JPanel {
         initComponents();
         setMinimumSize(new Dimension(492, 28));
         setVisible(true);
+        validate();
     }
 
     /**

@@ -509,7 +509,7 @@
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="TuesdayScrollPane" alignment="0" pref="511" max="32767" attributes="0"/>
+                  <Component id="TuesdayScrollPane" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -521,7 +521,7 @@
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Component id="TuesdayScrollPane" pref="151" max="32767" attributes="0"/>
+                      <Component id="TuesdayScrollPane" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
