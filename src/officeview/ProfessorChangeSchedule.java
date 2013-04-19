@@ -818,7 +818,7 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
         TimeRange range = new TimeRange();
         Component comp = range;
         System.out.println(this.TuesdayInnerPanel.add(comp));
-        this.revalidate();
+        //this.revalidate();
         this.repaint();
         this.TuesdayInnerPanel.setVisible(true);
         System.out.println(this.TuesdayInnerPanel.getComponent(0));
