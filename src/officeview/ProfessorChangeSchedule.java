@@ -2,6 +2,7 @@ package officeview;
 
 import java.awt.Component;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -815,13 +816,11 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox34ActionPerformed
 
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
-        TimeRange range = new TimeRange();
-        Component comp = range;
-        System.out.println(this.TuesdayInnerPanel.add(comp));
-        //this.revalidate();
-        this.repaint();
+        //this.TuesdayInnerPanel.add(new TimeRange());
+        JLabel label = new JLabel("Some new Label");
+        this.TuesdayInnerPanel.add(label);
+        this.TuesdayInnerPanel.revalidate();
         this.TuesdayInnerPanel.setVisible(true);
-        System.out.println(this.TuesdayInnerPanel.getComponent(0));
     }//GEN-LAST:event_AddTimeActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
