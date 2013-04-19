@@ -130,13 +130,16 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         Professor prof = new Professor(UsernameField.getText());
         MongoHelper.setDB("officeview");
         prof = MongoHelper.fetch(prof, "professors");
-        if(prof == null || PasswordField.getPassword().hashCode() != prof.getPasswordHash()){
+        if(prof == null || new String(PasswordField.getPassword()).hashCode() != prof.getPasswordHash()){
             System.out.println("Username/password invalid");
             System.out.println(PasswordField.getPassword());
             System.out.println(PasswordField.getPassword().hashCode());
         }
-        else
-            System.out.println("yay");
+        else{
+            ProfessorDashboard dash = new ProfessorDashboard();
+            dash.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_ProfessorLoginActionPerformed
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
