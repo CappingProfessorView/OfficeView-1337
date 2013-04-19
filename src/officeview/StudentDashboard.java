@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Mike
@@ -167,8 +169,35 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SchoolComboBoxActionPerformed
 
     private void SearchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchByNameButtonActionPerformed
-        this.FirstNameBox.getText();
-        this.LastNameBox.getText();
+        String firstName = this.FirstNameBox.getText().toLowerCase();
+        String lastName = this.LastNameBox.getText().toLowerCase();
+        Iterator<Professor> results = null;
+        
+        if (firstName.equals("")){
+            Iterable<Professor> temp = OfficeView.professors.find(
+                "{lastName: #}",lastName).as(Professor.class);
+            results = temp.iterator();
+        }
+        else if(lastName.equals("")){
+            Iterable<Professor> temp = OfficeView.professors.find(
+                "{firstName: #}",firstName).as(Professor.class);
+            results = temp.iterator();
+        }
+        else{
+            Iterable<Professor> temp = OfficeView.professors.find(
+                "{firstName: #, lastName: #}",firstName,lastName).as(Professor.class);
+            results = temp.iterator();
+        }
+        
+        if (results == null){
+            System.out.println("No professors found");
+        }
+        else{
+            while (results.hasNext()){
+                System.out.println(results.next().toString());
+            }
+            
+        }
         //use db search of above
     }//GEN-LAST:event_SearchByNameButtonActionPerformed
 

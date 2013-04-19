@@ -128,11 +128,11 @@ public class ProfessorSignIn extends javax.swing.JFrame {
     private void ProfessorLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfessorLoginActionPerformed
         String un = UsernameField.getText();
         int pwh = new String(PasswordField.getPassword()).hashCode();
-        Professor prof = OfficeView.professors.findOne("{userName: '"
-                +un+"', passwordHash: "
-                +pwh+"}").as(Professor.class);
-        if(prof == null)
+        Professor prof = OfficeView.professors.findOne("{userName: '" + un
+                    + "', passwordHash: "+ pwh +"}").as(Professor.class);
+        if(prof == null) {
             System.out.println("Username/password invalid");
+        }
         else{
             ProfessorDashboard dash = new ProfessorDashboard();
             dash.setVisible(true);

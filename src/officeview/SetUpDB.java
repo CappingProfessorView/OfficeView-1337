@@ -24,10 +24,12 @@ public class SetUpDB {
         Professor professor2 = new Professor("ron","coleman",null,null,"ron.coleman", "ronspw");
         Professor professor3 = new Professor("alan","labouseur",null,null,"alan.labouseur", "axq1u");
         Professor professor4 = new Professor("ben","carle",null,null,"ben.carle", "redE4anything");
+        Professor professor5 = new Professor("nor","coleman",null,null,"nor.coleman", "teddyBear");
         
         MongoHelper.save(professor,"professors");
         MongoHelper.save(professor2,"professors");
         MongoHelper.save(professor3,"professors");
         MongoHelper.save(professor4,"professors");
+        MongoHelper.save(professor5,"professors");
     }
 }

@@ -29,6 +29,7 @@ public class Professor{
     private String announcement = null;
     private String userName = null;
     private int passwordHash = 0;
+    private OfficeView.School school = null;
     /* status key: 
      * 0 = not available
      * 1 = available
@@ -128,5 +129,10 @@ public class Professor{
     
     public void setPasswordHash(int i){
         passwordHash = i;
+    }
+    
+    @Override
+    public String toString (){
+        return this.getFirstName() + " " + this.getLastName() + " " + this.getStatus() + " " + this.getSchedule();
     }
 }
