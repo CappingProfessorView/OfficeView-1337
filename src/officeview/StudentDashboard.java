@@ -5,6 +5,7 @@
 package officeview;
 
 import java.util.Iterator;
+import officeview.OfficeView.School;
 
 /**
  *
@@ -189,6 +190,38 @@ public class StudentDashboard extends javax.swing.JFrame {
             results = temp.iterator();
         }
         
+        returnResults(results);
+       /* if (results == null){
+            System.out.println("No professors found");
+        }
+        else{
+            while (results.hasNext()){
+                System.out.println(results.next().toString());
+            }
+            
+        }*/
+    }//GEN-LAST:event_SearchByNameButtonActionPerformed
+
+    private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
+        //searchEnum(this.SchoolComboBox.getSelectedItem().toString());
+        //System.out.println(School.);
+        //Iterable<Professor> temp = OfficeView.professors.find("{school: #}",school).as(Professor.class);
+        
+        //returnResults(temp.iterator());
+    }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
+
+    public static School searchEnum(String text) {
+        if (text != null) {
+          for (School s : School.values()) {
+              //if (text.equalsIgnoreCase(s.name().toString())) {
+             // return s;
+            //}
+          }
+        }
+        return null;
+    }
+    
+    private void returnResults(Iterator results){
         if (results == null){
             System.out.println("No professors found");
         }
@@ -198,14 +231,7 @@ public class StudentDashboard extends javax.swing.JFrame {
             }
             
         }
-        //use db search of above
-    }//GEN-LAST:event_SearchByNameButtonActionPerformed
-
-    private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
-        this.SchoolComboBox.getSelectedItem();
-        //use db search of above
-    }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */

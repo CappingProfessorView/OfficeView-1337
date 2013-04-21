@@ -6,6 +6,7 @@ package officeview;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
+import officeview.OfficeView.School;
 import org.bson.types.ObjectId;
 
 /**
@@ -29,7 +30,7 @@ public class Professor{
     private String announcement = null;
     private String userName = null;
     private int passwordHash = 0;
-    private OfficeView.School school = null;
+    private School school = null;
     /* status key: 
      * 0 = not available
      * 1 = available
@@ -40,13 +41,16 @@ public class Professor{
     
     public Professor(){}
     
-    public Professor(String firstName, String lastName, Schedule schedule, String announcement, String userName, String password){
+    public Professor(String firstName, String lastName, Schedule schedule, 
+                    String announcement, String userName, String password,
+                    School school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.schedule = schedule;
         this.announcement = announcement;
         this.userName = userName;
-        passwordHash = password.hashCode();
+        this.passwordHash = password.hashCode();
+        this.school = school;
     }
     
     public Integer getId() {
@@ -133,6 +137,14 @@ public class Professor{
     
     @Override
     public String toString (){
-        return this.getFirstName() + " " + this.getLastName() + " " + this.getStatus() + " " + this.getSchedule();
+        return this.getFirstName() + " " + this.getLastName() + " " + 
+                this.getStatus() + " " + this.getSchedule() + " " + this.getSchool().toString();
+    }
+    
+    public School getSchool(){
+        return this.school;
+    }
+    public void setSchool(School school){
+        this.school = school;
     }
 }
