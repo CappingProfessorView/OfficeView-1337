@@ -21,11 +21,33 @@ public class SetUpDB {
         
         MongoHelper.getCollection("professors").drop();
         
-        Professor professor = new Professor("steve","bluhson",null,null,"steve.bluhson", "bluh", School.LIBERAL_ARTS);
+        Professor professor = new Professor("steve","smith",null,null,"steve.smith", "bluh", School.LIBERAL_ARTS);
+        TimeNode sst1 = new TimeNode(1,0,"pm",3,30,"pm");
+        TimeNode sst2 = new TimeNode(2,0,"pm",3,0,"pm");
+        Day ssmonday = new Day();
+        Day ssthursday = new Day();
+        Schedule sssched = new Schedule();
+        sssched.setMonday(ssmonday);
+        ssmonday.setTimes(sst1);
+        sssched.setThursday(ssthursday);
+        ssthursday.setTimes(sst2);
+        professor.setSchedule(sssched);
+        
         Professor professor2 = new Professor("ron","coleman",null,null,"ron.coleman", "ronspw",School.COMPUTER_SCIENCE_MATH);
+        TimeNode rct1 = new TimeNode(4,0,"pm",6,0,"pm");
+        Day rcmonday = new Day();
+        Day rctuesday = new Day();
+        Schedule rcsched = new Schedule();
+        rcsched.setMonday(rcmonday);
+        rcmonday.setTimes(rct1);
+        rcsched.setTuesday(rctuesday);
+        rctuesday.setTimes(rct1);
+        professor2.setSchedule(rcsched);
+        
+        
         Professor professor3 = new Professor("alan","labouseur",null,null,"alan.labouseur", "axq1u",School.COMPUTER_SCIENCE_MATH);
         Professor professor4 = new Professor("ben","carle",null,null,"ben.carle", "redE4anything",School.COMPUTER_SCIENCE_MATH);
-        Professor professor5 = new Professor("nor","coleman",null,null,"nor.coleman", "teddyBear",School.MANAGEMENT);
+        Professor professor5 = new Professor("robert","smith",null,null,"robert.smith", "teddyBear",School.MANAGEMENT);
         
         MongoHelper.save(professor,"professors");
         MongoHelper.save(professor2,"professors");
