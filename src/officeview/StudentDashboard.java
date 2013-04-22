@@ -191,15 +191,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         }
         
         returnResults(results);
-       /* if (results == null){
-            System.out.println("No professors found");
-        }
-        else{
-            while (results.hasNext()){
-                System.out.println(results.next().toString());
-            }
-            
-        }*/
     }//GEN-LAST:event_SearchByNameButtonActionPerformed
 
     private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
