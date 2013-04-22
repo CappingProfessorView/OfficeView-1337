@@ -67,4 +67,21 @@ public class Schedule{
     public void setFriday(Day d){
       this.friday = d;
     }
+    
+    public String toString(){
+        String result = "Office Hours:\n";
+        if(monday != null)
+            result += "Monday: "+monday.getTimes();
+        if(tuesday != null)
+            result += "Tuesday: "+tuesday.getTimes();
+        if(wednesday != null)
+            result += "Wednesday: "+wednesday.getTimes();
+        if(thursday != null)
+            result += "Thursday: "+thursday.getTimes();
+        if(friday != null)
+            result += "Friday: "+friday.getTimes();
+        if(result.equals("Office Hours:\n") || this == null)
+            result = "Office hours not available.";
+        return result;
+    }
 }

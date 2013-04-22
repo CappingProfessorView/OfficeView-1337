@@ -137,8 +137,12 @@ public class Professor{
     
     @Override
     public String toString (){
-        return this.getFirstName() + " " + this.getLastName() + " " + 
-                this.getStatus() + " " + this.getSchedule() + " " + this.getSchool().toString();
+        if(this.getSchedule() != null){
+            return this.getFirstName() + " " + this.getLastName() + "\n" + 
+                    this.getStatus() + "\n" + this.getSchedule() + this.getSchool();
+        }
+        return this.getFirstName() + " " + this.getLastName() + "\n" +
+                this.getStatus() + "\nOffice hours not available.\n" + this.getSchool();
     }
     
     public School getSchool(){
