@@ -144,7 +144,7 @@ public class TimeNode{
     int size = 0;
     TimeNode current = this;
     while(current != null){
-      times += current.getHourIn()+":"+current.getMinIn()+" "+current.getPeriodIn()+"-"+
+      times += current.getHourIn()+":"+current.getMinIn()+" "+current.getPeriodIn()+" - "+
         current.getHourOut()+":"+current.getMinOut()+" "+current.getPeriodOut()+"\n";
       size++;
       current = current.next;

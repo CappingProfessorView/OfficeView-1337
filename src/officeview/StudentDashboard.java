@@ -213,12 +213,13 @@ public class StudentDashboard extends javax.swing.JFrame {
     }
     
     private void returnResults(Iterator results){
-        if (results == null){
+        if (!results.hasNext()){
             System.out.println("No professors found");
         }
         else{
             while (results.hasNext()){
                 System.out.println(results.next());
+                System.out.println();
             }
             
         }
