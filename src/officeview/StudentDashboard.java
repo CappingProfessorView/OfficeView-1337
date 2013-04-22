@@ -227,7 +227,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         }
         else{
             while (results.hasNext()){
-                System.out.println(results.next().toString());
+                System.out.println(results.next());
             }
             
         }
