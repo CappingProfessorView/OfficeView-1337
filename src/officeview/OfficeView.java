@@ -9,6 +9,9 @@ import org.jongo.*;
 //import com.mongodb.Mongo;
 //import com.mongodb.MongoColle
 import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
 //import org.jongo.Jongo;
 
 /**
@@ -38,13 +41,18 @@ public class OfficeView {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws UnknownHostException {
-        // TODO code application logic here
-        //MongoHelper.setDB("officeview");
-        db = new Mongo().getDB("officeview");
-        jongo = new Jongo(db);
-        professors = jongo.getCollection("professors");
-        LaunchFrame start = new LaunchFrame();
-        start.setVisible(true);
+    public static void main(String[] args) {
+        try {
+            // TODO code application logic here
+            //MongoHelper.setDB("officeview");
+            db = new Mongo().getDB("officeview");
+            jongo = new Jongo(db);
+            professors = jongo.getCollection("professors");
+            LaunchFrame start = new LaunchFrame();
+            start.setVisible(true);
+            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            Logger.getLogger(OfficeView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

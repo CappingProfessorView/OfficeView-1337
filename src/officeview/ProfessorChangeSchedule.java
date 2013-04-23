@@ -1,6 +1,8 @@
 package officeview;
 
 import java.awt.Component;
+import java.awt.Dimension;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -814,13 +816,15 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     private void jComboBox34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox34ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox34ActionPerformed
-
+    int count = 0;
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
-        //this.TuesdayInnerPanel.add(new TimeRange());
-        JLabel label = new JLabel("Some new Label");
-        this.TuesdayInnerPanel.add(label);
-        this.TuesdayInnerPanel.revalidate();
-        this.TuesdayInnerPanel.setVisible(true);
+        TimeRange temp = new TimeRange();
+        temp.setVisible(true);
+        temp.setSize(new Dimension(492, 28));
+        this.TuesdayInnerPanel.add(temp).setLocation(0, 30 * count);
+        this.TuesdayInnerPanel.validate();
+        System.out.println(this.TuesdayInnerPanel.getComponent(count));
+        count++;
     }//GEN-LAST:event_AddTimeActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
