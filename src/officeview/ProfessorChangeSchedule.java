@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JSeparator;
 
 /*
  * To change this template, choose Tools | Templates
@@ -122,6 +123,8 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Office View - Change Schedule");
+        setMaximumSize(new java.awt.Dimension(536, 305));
+        setResizable(false);
 
         jLabel2.setText("Time In");
 
@@ -816,15 +819,12 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
     private void jComboBox34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox34ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox34ActionPerformed
-    int count = 0;
+
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
         TimeRange temp = new TimeRange();
-        temp.setVisible(true);
-        temp.setSize(new Dimension(492, 28));
-        this.TuesdayInnerPanel.add(temp).setLocation(0, 30 * count);
-        this.TuesdayInnerPanel.validate();
-        System.out.println(this.TuesdayInnerPanel.getComponent(count));
-        count++;
+        int count = this.TuesdayInnerPanel.getComponentCount();
+        this.TuesdayInnerPanel.add(temp).setLocation(0, 35 * count);
+        this.TuesdayInnerPanel.validate(); 
     }//GEN-LAST:event_AddTimeActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
@@ -839,18 +839,6 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox25ActionPerformed
 
-    private void addTimeFrame(){
-        TimeRange range = new TimeRange();
-        //System.out.println(this.TuesdayInnerPanel.getComponentCount());
-        //System.out.println(this.TuesdayInnerPanel.add(range, 0));
-        this.validate();
-        //this.Tuesday.setVisible(true);
-        //this.TuesdayScrollPane.setVisible(true);
-        //this.TuesdayInnerPanel.setVisible(true);
-        this.setVisible(true);
-        //System.out.println(range);
-        //System.out.println(this.TuesdayInnerPanel.getComponentCount());
-    }
     /**
      * @param args the command line arguments
      */
