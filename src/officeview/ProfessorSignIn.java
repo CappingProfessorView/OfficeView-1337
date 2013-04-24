@@ -4,7 +4,7 @@
  */
 package officeview;
 
-import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -38,6 +38,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Office View");
         setMinimumSize(new java.awt.Dimension(140, 210));
+        setResizable(false);
 
         ProfessorSignInFrame.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ProfessorSignInFrame.setOpaque(false);
@@ -45,19 +46,22 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         UsernameLabel.setText("Username:");
         UsernameLabel.setName("Username Label"); // NOI18N
 
-        UsernameField.setToolTipText("");
         UsernameField.setName("Username box"); // NOI18N
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameFieldActionPerformed(evt);
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UsernameFieldKeyPressed(evt);
             }
         });
 
         PasswordLabel.setText("Password:");
         PasswordLabel.setName("Password Label"); // NOI18N
 
-        PasswordField.setToolTipText("");
         PasswordField.setName("Password box"); // NOI18N
+        PasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordFieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ProfessorSignInFrameLayout = new javax.swing.GroupLayout(ProfessorSignInFrame);
         ProfessorSignInFrame.setLayout(ProfessorSignInFrameLayout);
@@ -126,24 +130,37 @@ public class ProfessorSignIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProfessorLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfessorLoginActionPerformed
-        String un = UsernameField.getText();
-        int pwh = new String(PasswordField.getPassword()).hashCode();
-        Professor prof = OfficeView.professors.findOne("{userName: '" + un
-                    + "', passwordHash: "+ pwh +"}").as(Professor.class);
-        if(prof == null) {
-            System.out.println("Username/password invalid");
-        }
-        else{
-            ProfessorDashboard dash = new ProfessorDashboard();
-            dash.setVisible(true);
-            this.dispose();
-        }
+        login();
     }//GEN-LAST:event_ProfessorLoginActionPerformed
 
-    private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameFieldActionPerformed
+    private void UsernameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameFieldKeyPressed
+         login();
+    }//GEN-LAST:event_UsernameFieldKeyPressed
 
+    private void PasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordFieldKeyPressed
+        UsernameFieldKeyPressed(evt);
+    }//GEN-LAST:event_PasswordFieldKeyPressed
+
+    private void login(){
+        String un = UsernameField.getText();
+        int pwh = new String(PasswordField.getPassword()).hashCode();
+        if(un.equals("") || pwh == 0){
+            Professor prof = OfficeView.professors.findOne("{userName: '" + un
+                    + "', passwordHash: "+ pwh +"}").as(Professor.class);
+            if(prof == null) {
+                System.out.println("Username/password invalid");
+            }
+            else{
+                ProfessorDashboard dash = new ProfessorDashboard();
+                dash.setVisible(true);
+                this.dispose();
+            }
+        }
+        else{
+            System.out.println("Enter Correct Credentials");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
