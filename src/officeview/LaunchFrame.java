@@ -4,6 +4,9 @@
  */
 package officeview;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author jcooney7722
@@ -14,6 +17,8 @@ public class LaunchFrame extends javax.swing.JFrame {
      * Creates new form launchFrame
      */
     public LaunchFrame() {
+        //Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize(); 
+        //setLocation(screensize.width/2, screensize.height/2);;
         initComponents();
     }
 

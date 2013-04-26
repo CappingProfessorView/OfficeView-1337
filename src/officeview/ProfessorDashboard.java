@@ -4,7 +4,10 @@
  */
 package officeview;
 
+import java.awt.PopupMenu;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
+import javax.swing.JWindow;
 
 /**
  *
@@ -193,7 +196,11 @@ public class ProfessorDashboard extends javax.swing.JFrame {
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         //***TODO:Set professor status and other things***
-        this.dispose();
+        int choice = JOptionPane.showConfirmDialog(this, "Do you wish to sign out?");
+        if (choice == JOptionPane.YES_OPTION){
+            
+            this.dispose();
+        }
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

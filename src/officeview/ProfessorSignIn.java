@@ -5,6 +5,7 @@
 package officeview;
 
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +18,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
      */
     public ProfessorSignIn() {
         initComponents();
+        //setLocation(WIDTH/2, HEIGHT/2);
     }
 
     /**
@@ -133,32 +135,34 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         login();
     }//GEN-LAST:event_ProfessorLoginActionPerformed
 
-    private void UsernameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameFieldKeyPressed
-         login();
-    }//GEN-LAST:event_UsernameFieldKeyPressed
-
     private void PasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordFieldKeyPressed
         UsernameFieldKeyPressed(evt);
     }//GEN-LAST:event_PasswordFieldKeyPressed
 
+    private void UsernameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            login();
+        }
+    }//GEN-LAST:event_UsernameFieldKeyPressed
+
     private void login(){
         String un = UsernameField.getText();
         int pwh = new String(PasswordField.getPassword()).hashCode();
-        if(un.equals("") || pwh == 0){
+        //if(un.equals("") || pwh == 0){
             Professor prof = OfficeView.professors.findOne("{userName: '" + un
                     + "', passwordHash: "+ pwh +"}").as(Professor.class);
             if(prof == null) {
-                System.out.println("Username/password invalid");
+                JOptionPane.showMessageDialog(this,"Username/password invalid");
             }
             else{
                 ProfessorDashboard dash = new ProfessorDashboard();
                 dash.setVisible(true);
                 this.dispose();
             }
-        }
-        else{
-            System.out.println("Enter Correct Credentials");
-        }
+        //}
+        //else{
+            //System.out.println("Enter Correct Credentials");
+        //}
     }
     
     /**
