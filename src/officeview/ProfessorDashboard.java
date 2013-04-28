@@ -190,7 +190,7 @@ public class ProfessorDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_BeBackSoonActionPerformed
 
     private void ScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleActionPerformed
-       ProfessorChangeSchedule popup = new ProfessorChangeSchedule();
+       ProfessorChangeScheduleDialog popup = new ProfessorChangeScheduleDialog(this, true);
        popup.setVisible(true);
     }//GEN-LAST:event_ScheduleActionPerformed
 
