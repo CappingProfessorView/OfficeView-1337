@@ -3,20 +3,19 @@ package officeview;
 import javax.swing.JFrame;
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * *****THIS IS KEPT FOR BACKUP, USE ProfessorChangeScheduleDialog******
  */
 
 /**
  *
- * @author Mike
+ * *****THIS IS KEPT FOR BACKUP, USE ProfessorChangeScheduleDialog******
  */
-public class ProfessorChangeSchedule extends javax.swing.JFrame {
+public class ProfessorChangeScheduleDepricated extends javax.swing.JFrame {
 
     /**
      * Creates new form ChangeSchedule
      */
-    public ProfessorChangeSchedule() {
+    public ProfessorChangeScheduleDepricated() {
         initComponents();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
@@ -851,20 +850,20 @@ public class ProfessorChangeSchedule extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProfessorChangeSchedule.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorChangeScheduleDepricated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProfessorChangeSchedule.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorChangeScheduleDepricated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProfessorChangeSchedule.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorChangeScheduleDepricated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProfessorChangeSchedule.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorChangeScheduleDepricated.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProfessorChangeSchedule().setVisible(true);
+                new ProfessorChangeScheduleDepricated().setVisible(true);
             }
         });
     }

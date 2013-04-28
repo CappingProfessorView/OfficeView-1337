@@ -798,14 +798,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
         TimeRange temp = new TimeRange();
         JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getSelectedComponent();
-        
-        
-        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
-   
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
-        
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-        
         //for(int i=0;i<innerPanel.getComponentCount();i++){
         //    System.out.println(innerPanel.getComponent(i));
         //}
