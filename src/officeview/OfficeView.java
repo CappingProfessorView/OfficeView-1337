@@ -24,6 +24,7 @@ public class OfficeView {
     static Jongo jongo;
     static MongoCollection professors;
     static Dimension screensize;
+    static String image = "icon2.png";
     public enum School {
         COMMUNICATION_ARTS ("Communication & the Arts"),
         COMPUTER_SCIENCE_MATH ("Computer Science & Mathematics"),

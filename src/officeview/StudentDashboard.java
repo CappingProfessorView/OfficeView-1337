@@ -21,7 +21,7 @@ public class StudentDashboard extends javax.swing.JFrame {
     public StudentDashboard() {
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
     }
 
     /**
