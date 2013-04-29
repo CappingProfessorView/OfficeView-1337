@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import officeview.OfficeView.School;
 
@@ -18,6 +20,8 @@ public class StudentDashboard extends javax.swing.JFrame {
      */
     public StudentDashboard() {
         initComponents();
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**
@@ -49,8 +53,19 @@ public class StudentDashboard extends javax.swing.JFrame {
                 LastNameBoxActionPerformed(evt);
             }
         });
+        LastNameBox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LastNameBoxKeyPressed(evt);
+            }
+        });
 
         jLabel1.setText("Last:");
+
+        FirstNameBox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FirstNameBoxKeyPressed(evt);
+            }
+        });
 
         jLabel2.setText("First:");
 
@@ -76,7 +91,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                     .addComponent(LastNameBox))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchByNameTabLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 279, Short.MAX_VALUE)
                 .addComponent(SearchByNameButton))
         );
         SearchByNameTabLayout.setVerticalGroup(
@@ -90,7 +105,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addGroup(SearchByNameTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FirstNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(SearchByNameButton))
         );
 
@@ -133,7 +148,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addGroup(SearchBySchoolTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SchoolComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(SearchBySchoolButton))
         );
 
@@ -145,7 +160,7 @@ public class StudentDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -170,6 +185,28 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_SchoolComboBoxActionPerformed
 
     private void SearchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchByNameButtonActionPerformed
+        search();
+    }//GEN-LAST:event_SearchByNameButtonActionPerformed
+
+    private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
+        //searchEnum(this.SchoolComboBox.getSelectedItem().toString());
+        //System.out.println(School.);
+        //Iterable<Professor> temp = OfficeView.professors.find("{school: #}",school).as(Professor.class);
+        
+        //returnResults(temp.iterator());
+    }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
+
+    private void LastNameBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameBoxKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            search();
+        }
+    }//GEN-LAST:event_LastNameBoxKeyPressed
+
+    private void FirstNameBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FirstNameBoxKeyPressed
+        LastNameBoxKeyPressed(evt);
+    }//GEN-LAST:event_FirstNameBoxKeyPressed
+
+    private void search(){
         String firstName = this.FirstNameBox.getText().toLowerCase();
         String lastName = this.LastNameBox.getText().toLowerCase();
         Iterator<Professor> results = null;
@@ -191,17 +228,10 @@ public class StudentDashboard extends javax.swing.JFrame {
         }
         
         returnResults(results);
-    }//GEN-LAST:event_SearchByNameButtonActionPerformed
-
-    private void SearchBySchoolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBySchoolButtonActionPerformed
-        //searchEnum(this.SchoolComboBox.getSelectedItem().toString());
-        //System.out.println(School.);
-        //Iterable<Professor> temp = OfficeView.professors.find("{school: #}",school).as(Professor.class);
-        
-        //returnResults(temp.iterator());
-    }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
-
-    public static School searchEnum(String text) {
+    } 
+    
+    
+    private static School searchEnum(String text) {
         if (text != null) {
           for (School s : School.values()) {
               //if (text.equalsIgnoreCase(s.name().toString())) {

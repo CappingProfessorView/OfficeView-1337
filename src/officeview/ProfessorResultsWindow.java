@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author Mike
@@ -16,6 +18,8 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
     public ProfessorResultsWindow(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**

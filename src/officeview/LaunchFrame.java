@@ -4,7 +4,6 @@
  */
 package officeview;
 
-import java.awt.Dimension;
 import java.awt.Toolkit;
 
 /**
@@ -17,9 +16,9 @@ public class LaunchFrame extends javax.swing.JFrame {
      * Creates new form launchFrame
      */
     public LaunchFrame() {
-        //Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize(); 
-        //setLocation(screensize.width/2, screensize.height/2);;
         initComponents();
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**

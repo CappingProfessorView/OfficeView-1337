@@ -5,6 +5,7 @@
 package officeview;
 
 import java.awt.Component;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
@@ -21,6 +22,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     public ProfessorChangeScheduleDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**

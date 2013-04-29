@@ -5,13 +5,13 @@
 package officeview;
 
 import com.mongodb.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import org.jongo.*;
 //import com.mongodb.Mongo;
 //import com.mongodb.MongoColle
-import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.UnsupportedLookAndFeelException;
 //import org.jongo.Jongo;
 
 /**
@@ -23,6 +23,7 @@ public class OfficeView {
     static DB db;
     static Jongo jongo;
     static MongoCollection professors;
+    static Dimension screensize;
     public enum School {
         COMMUNICATION_ARTS ("Communication & the Arts"),
         COMPUTER_SCIENCE_MATH ("Computer Science & Mathematics"),
@@ -42,6 +43,7 @@ public class OfficeView {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        screensize = Toolkit.getDefaultToolkit().getScreenSize();
         try {
             // TODO code application logic here
             //MongoHelper.setDB("officeview");

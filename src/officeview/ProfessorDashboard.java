@@ -13,13 +13,14 @@ import javax.swing.JWindow;
  *
  * @author Mike
  */
-public class ProfessorDashboard extends javax.swing.JFrame {
+public class ProfessorDashboard extends javax.swing.JFrame{
 
     /**
      * Creates new form ProfessorMainWindow
      */
     public ProfessorDashboard() {
         initComponents();
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 

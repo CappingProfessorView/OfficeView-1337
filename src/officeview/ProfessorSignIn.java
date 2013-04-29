@@ -4,6 +4,7 @@
  */
 package officeview;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
@@ -18,7 +19,8 @@ public class ProfessorSignIn extends javax.swing.JFrame {
      */
     public ProfessorSignIn() {
         initComponents();
-        //setLocation(WIDTH/2, HEIGHT/2);
+        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     }
 
     /**
@@ -152,7 +154,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
             Professor prof = OfficeView.professors.findOne("{userName: '" + un
                     + "', passwordHash: "+ pwh +"}").as(Professor.class);
             if(prof == null) {
-                JOptionPane.showMessageDialog(this,"Username/password invalid");
+                JOptionPane.showMessageDialog(this,"The username or password you entered is incorrect");
             }
             else{
                 ProfessorDashboard dash = new ProfessorDashboard();
