@@ -18,7 +18,7 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
     public ProfessorResultsWindow(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        //setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
     }
 
@@ -33,8 +33,8 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -42,26 +42,26 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jScrollPane2.setBounds(0, 0, 130, 280);
+        jScrollPane2.setBounds(0, 0, 130, 290);
         jLayeredPane1.add(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
+                {"Monday", null},
+                {"Tuesday", null},
+                {"Wednesday", null},
+                {"Thursday", null},
+                {"Friday", null}
             },
             new String [] {
-                "Office Hours"
+                "Day", "Hours"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -72,11 +72,17 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setMinimumSize(new java.awt.Dimension(15, 79));
-        jScrollPane1.setViewportView(jTable1);
+        jTable2.setColumnSelectionAllowed(true);
+        jTable2.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(jTable2);
+        jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable2.getColumnModel().getColumn(0).setMinWidth(60);
+        jTable2.getColumnModel().getColumn(0).setPreferredWidth(60);
+        jTable2.getColumnModel().getColumn(0).setMaxWidth(60);
+        jTable2.getColumnModel().getColumn(1).setResizable(false);
 
-        jScrollPane1.setBounds(130, 170, 300, 110);
-        jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jScrollPane3.setBounds(130, 170, 310, 110);
+        jLayeredPane1.add(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -95,7 +101,7 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -148,8 +154,8 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
