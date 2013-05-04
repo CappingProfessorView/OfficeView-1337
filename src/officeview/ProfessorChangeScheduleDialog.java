@@ -23,7 +23,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));  
     }
 
     /**
@@ -122,10 +122,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         LocationBar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(536, 305));
         setMinimumSize(new java.awt.Dimension(536, 305));
         setModal(true);
-        setPreferredSize(new java.awt.Dimension(536, 305));
         setResizable(false);
 
         jLabel2.setText("Time In");
@@ -173,7 +171,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         timeRange6.setLayout(timeRange6Layout);
         timeRange6Layout.setHorizontalGroup(
             timeRange6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange6Layout.createSequentialGroup()
+            .addComponent(jSeparator7)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, timeRange6Layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addComponent(HrInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel29)
@@ -181,9 +181,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
                 .addComponent(HrOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31)
@@ -191,8 +191,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jSeparator7)
+                .addGap(21, 21, 21))
         );
         timeRange6Layout.setVerticalGroup(
             timeRange6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +220,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
             MondayInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MondayInnerPanelLayout.createSequentialGroup()
                 .addComponent(timeRange6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 417, Short.MAX_VALUE))
+                .addGap(0, 277, Short.MAX_VALUE))
         );
 
         MondayScrollPane.setViewportView(MondayInnerPanel);
@@ -231,12 +230,12 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayLayout.setHorizontalGroup(
             MondayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MondayLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(61, 61, 61)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         MondayLayout.setVerticalGroup(
             MondayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,9 +303,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(HrOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel34)
@@ -359,7 +358,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         TuesdayLayout.setVerticalGroup(
             TuesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,9 +426,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(HrOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel37)
@@ -482,7 +481,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         WednesdayLayout.setVerticalGroup(
             WednesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -550,9 +549,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(HrOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel40)
@@ -605,7 +604,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         ThursdayLayout.setVerticalGroup(
             ThursdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,9 +672,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(MinInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(HrOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel43)
@@ -728,7 +727,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel27)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         FridayLayout.setVerticalGroup(
             FridayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -812,6 +811,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         innerPanel.validate();
     }//GEN-LAST:event_AddTimeActionPerformed
 
+       
     private void LocationBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationBarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LocationBarActionPerformed
@@ -900,48 +900,24 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddTime;
     private javax.swing.JPanel Friday;
-    private javax.swing.JComboBox HrInBox;
-    private javax.swing.JComboBox HrInBox1;
     private javax.swing.JComboBox HrInBox10;
-    private javax.swing.JComboBox HrInBox2;
-    private javax.swing.JComboBox HrInBox3;
-    private javax.swing.JComboBox HrInBox4;
-    private javax.swing.JComboBox HrInBox5;
     private javax.swing.JComboBox HrInBox6;
     private javax.swing.JComboBox HrInBox7;
     private javax.swing.JComboBox HrInBox8;
     private javax.swing.JComboBox HrInBox9;
-    private javax.swing.JComboBox HrOutBox;
-    private javax.swing.JComboBox HrOutBox1;
     private javax.swing.JComboBox HrOutBox10;
-    private javax.swing.JComboBox HrOutBox2;
-    private javax.swing.JComboBox HrOutBox3;
-    private javax.swing.JComboBox HrOutBox4;
-    private javax.swing.JComboBox HrOutBox5;
     private javax.swing.JComboBox HrOutBox6;
     private javax.swing.JComboBox HrOutBox7;
     private javax.swing.JComboBox HrOutBox8;
     private javax.swing.JComboBox HrOutBox9;
     private javax.swing.JTextField LocationBar;
     private javax.swing.JLabel LocationLabel;
-    private javax.swing.JComboBox MinInBox;
-    private javax.swing.JComboBox MinInBox1;
     private javax.swing.JComboBox MinInBox10;
-    private javax.swing.JComboBox MinInBox2;
-    private javax.swing.JComboBox MinInBox3;
-    private javax.swing.JComboBox MinInBox4;
-    private javax.swing.JComboBox MinInBox5;
     private javax.swing.JComboBox MinInBox6;
     private javax.swing.JComboBox MinInBox7;
     private javax.swing.JComboBox MinInBox8;
     private javax.swing.JComboBox MinInBox9;
-    private javax.swing.JComboBox MinOutBox;
-    private javax.swing.JComboBox MinOutBox1;
     private javax.swing.JComboBox MinOutBox10;
-    private javax.swing.JComboBox MinOutBox2;
-    private javax.swing.JComboBox MinOutBox3;
-    private javax.swing.JComboBox MinOutBox4;
-    private javax.swing.JComboBox MinOutBox5;
     private javax.swing.JComboBox MinOutBox6;
     private javax.swing.JComboBox MinOutBox7;
     private javax.swing.JComboBox MinOutBox8;
@@ -957,24 +933,12 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane MondayScrollPane2;
     private javax.swing.JScrollPane MondayScrollPane3;
     private javax.swing.JScrollPane MondayScrollPane4;
-    private javax.swing.JComboBox PeriodInBox;
-    private javax.swing.JComboBox PeriodInBox1;
     private javax.swing.JComboBox PeriodInBox10;
-    private javax.swing.JComboBox PeriodInBox2;
-    private javax.swing.JComboBox PeriodInBox3;
-    private javax.swing.JComboBox PeriodInBox4;
-    private javax.swing.JComboBox PeriodInBox5;
     private javax.swing.JComboBox PeriodInBox6;
     private javax.swing.JComboBox PeriodInBox7;
     private javax.swing.JComboBox PeriodInBox8;
     private javax.swing.JComboBox PeriodInBox9;
-    private javax.swing.JComboBox PeriodOutBox;
-    private javax.swing.JComboBox PeriodOutBox1;
     private javax.swing.JComboBox PeriodOutBox10;
-    private javax.swing.JComboBox PeriodOutBox2;
-    private javax.swing.JComboBox PeriodOutBox3;
-    private javax.swing.JComboBox PeriodOutBox4;
-    private javax.swing.JComboBox PeriodOutBox5;
     private javax.swing.JComboBox PeriodOutBox6;
     private javax.swing.JComboBox PeriodOutBox7;
     private javax.swing.JComboBox PeriodOutBox8;
@@ -984,27 +948,13 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private javax.swing.JPanel Tuesday;
     private javax.swing.JButton UpdateButton;
     private javax.swing.JPanel Wednesday;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1017,34 +967,18 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JPanel timeRange;
-    private javax.swing.JPanel timeRange1;
     private javax.swing.JPanel timeRange10;
-    private javax.swing.JPanel timeRange2;
-    private javax.swing.JPanel timeRange3;
-    private javax.swing.JPanel timeRange4;
-    private javax.swing.JPanel timeRange5;
     private javax.swing.JPanel timeRange6;
     private javax.swing.JPanel timeRange7;
     private javax.swing.JPanel timeRange8;
