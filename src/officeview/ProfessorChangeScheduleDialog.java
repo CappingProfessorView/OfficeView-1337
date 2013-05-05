@@ -6,6 +6,7 @@ package officeview;
 
 import java.awt.Component;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
@@ -15,7 +16,9 @@ import javax.swing.JViewport;
  * @author Mike
  */
 public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
-
+    
+    ArrayList display = new ArrayList();
+    
     /**
      * Creates new form ProfessorChangeScheduleDialog
      */
@@ -24,6 +27,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));  
+        
     }
 
     /**
@@ -41,85 +45,31 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         MondayScrollPane = new javax.swing.JScrollPane();
         MondayInnerPanel = new javax.swing.JPanel();
-        timeRange6 = new javax.swing.JPanel();
-        HrInBox6 = new javax.swing.JComboBox();
-        jLabel29 = new javax.swing.JLabel();
-        MinInBox6 = new javax.swing.JComboBox();
-        PeriodInBox6 = new javax.swing.JComboBox();
-        jLabel30 = new javax.swing.JLabel();
-        HrOutBox6 = new javax.swing.JComboBox();
-        jLabel31 = new javax.swing.JLabel();
-        MinOutBox6 = new javax.swing.JComboBox();
-        PeriodOutBox6 = new javax.swing.JComboBox();
-        jSeparator7 = new javax.swing.JSeparator();
         Tuesday = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         MondayScrollPane1 = new javax.swing.JScrollPane();
         MondayInnerPanel1 = new javax.swing.JPanel();
-        timeRange7 = new javax.swing.JPanel();
-        HrInBox7 = new javax.swing.JComboBox();
-        jLabel32 = new javax.swing.JLabel();
-        MinInBox7 = new javax.swing.JComboBox();
-        PeriodInBox7 = new javax.swing.JComboBox();
-        jLabel33 = new javax.swing.JLabel();
-        HrOutBox7 = new javax.swing.JComboBox();
-        jLabel34 = new javax.swing.JLabel();
-        MinOutBox7 = new javax.swing.JComboBox();
-        PeriodOutBox7 = new javax.swing.JComboBox();
-        jSeparator8 = new javax.swing.JSeparator();
         Wednesday = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         MondayScrollPane2 = new javax.swing.JScrollPane();
         MondayInnerPanel2 = new javax.swing.JPanel();
-        timeRange8 = new javax.swing.JPanel();
-        HrInBox8 = new javax.swing.JComboBox();
-        jLabel35 = new javax.swing.JLabel();
-        MinInBox8 = new javax.swing.JComboBox();
-        PeriodInBox8 = new javax.swing.JComboBox();
-        jLabel36 = new javax.swing.JLabel();
-        HrOutBox8 = new javax.swing.JComboBox();
-        jLabel37 = new javax.swing.JLabel();
-        MinOutBox8 = new javax.swing.JComboBox();
-        PeriodOutBox8 = new javax.swing.JComboBox();
-        jSeparator9 = new javax.swing.JSeparator();
         Thursday = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         MondayScrollPane3 = new javax.swing.JScrollPane();
         MondayInnerPanel3 = new javax.swing.JPanel();
-        timeRange9 = new javax.swing.JPanel();
-        HrInBox9 = new javax.swing.JComboBox();
-        jLabel38 = new javax.swing.JLabel();
-        MinInBox9 = new javax.swing.JComboBox();
-        PeriodInBox9 = new javax.swing.JComboBox();
-        jLabel39 = new javax.swing.JLabel();
-        HrOutBox9 = new javax.swing.JComboBox();
-        jLabel40 = new javax.swing.JLabel();
-        MinOutBox9 = new javax.swing.JComboBox();
-        PeriodOutBox9 = new javax.swing.JComboBox();
-        jSeparator10 = new javax.swing.JSeparator();
         Friday = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         MondayScrollPane4 = new javax.swing.JScrollPane();
         MondayInnerPanel4 = new javax.swing.JPanel();
-        timeRange10 = new javax.swing.JPanel();
-        HrInBox10 = new javax.swing.JComboBox();
-        jLabel41 = new javax.swing.JLabel();
-        MinInBox10 = new javax.swing.JComboBox();
-        PeriodInBox10 = new javax.swing.JComboBox();
-        jLabel42 = new javax.swing.JLabel();
-        HrOutBox10 = new javax.swing.JComboBox();
-        jLabel43 = new javax.swing.JLabel();
-        MinOutBox10 = new javax.swing.JComboBox();
-        PeriodOutBox10 = new javax.swing.JComboBox();
-        jSeparator11 = new javax.swing.JSeparator();
         UpdateButton = new javax.swing.JButton();
         AddTime = new javax.swing.JButton();
         LocationLabel = new javax.swing.JLabel();
         LocationBar = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(536, 305));
@@ -136,91 +86,15 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
         MondayInnerPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        timeRange6.setBackground(new java.awt.Color(204, 204, 204));
-
-        HrInBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrInBox6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrInBox6ActionPerformed(evt);
-            }
-        });
-
-        jLabel29.setText(":");
-
-        MinInBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodInBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        jLabel30.setText("--------------to---------------");
-        jLabel30.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        HrOutBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrOutBox6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrOutBox6ActionPerformed(evt);
-            }
-        });
-
-        jLabel31.setText(":");
-
-        MinOutBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodOutBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        javax.swing.GroupLayout timeRange6Layout = new javax.swing.GroupLayout(timeRange6);
-        timeRange6.setLayout(timeRange6Layout);
-        timeRange6Layout.setHorizontalGroup(
-            timeRange6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator7)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, timeRange6Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(HrInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(HrOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        timeRange6Layout.setVerticalGroup(
-            timeRange6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange6Layout.createSequentialGroup()
-                .addGroup(timeRange6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HrInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29)
-                    .addComponent(MinInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodInBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HrOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31)
-                    .addComponent(MinOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodOutBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout MondayInnerPanelLayout = new javax.swing.GroupLayout(MondayInnerPanel);
         MondayInnerPanel.setLayout(MondayInnerPanelLayout);
         MondayInnerPanelLayout.setHorizontalGroup(
             MondayInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(timeRange6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         MondayInnerPanelLayout.setVerticalGroup(
             MondayInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MondayInnerPanelLayout.createSequentialGroup()
-                .addComponent(timeRange6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 277, Short.MAX_VALUE))
+            .addGap(0, 305, Short.MAX_VALUE)
         );
 
         MondayScrollPane.setViewportView(MondayInnerPanel);
@@ -260,90 +134,15 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
         MondayInnerPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        timeRange7.setBackground(new java.awt.Color(204, 204, 204));
-
-        HrInBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrInBox7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrInBox7ActionPerformed(evt);
-            }
-        });
-
-        jLabel32.setText(":");
-
-        MinInBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodInBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        jLabel33.setText("--------------to---------------");
-        jLabel33.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        HrOutBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrOutBox7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrOutBox7ActionPerformed(evt);
-            }
-        });
-
-        jLabel34.setText(":");
-
-        MinOutBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodOutBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        javax.swing.GroupLayout timeRange7Layout = new javax.swing.GroupLayout(timeRange7);
-        timeRange7.setLayout(timeRange7Layout);
-        timeRange7Layout.setHorizontalGroup(
-            timeRange7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange7Layout.createSequentialGroup()
-                .addComponent(HrInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(HrOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jSeparator8)
-        );
-        timeRange7Layout.setVerticalGroup(
-            timeRange7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange7Layout.createSequentialGroup()
-                .addGroup(timeRange7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HrInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(MinInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodInBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HrOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(MinOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodOutBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout MondayInnerPanel1Layout = new javax.swing.GroupLayout(MondayInnerPanel1);
         MondayInnerPanel1.setLayout(MondayInnerPanel1Layout);
         MondayInnerPanel1Layout.setHorizontalGroup(
             MondayInnerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(timeRange7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         MondayInnerPanel1Layout.setVerticalGroup(
             MondayInnerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MondayInnerPanel1Layout.createSequentialGroup()
-                .addComponent(timeRange7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 417, Short.MAX_VALUE))
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         MondayScrollPane1.setViewportView(MondayInnerPanel1);
@@ -383,90 +182,15 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
         MondayInnerPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
-        timeRange8.setBackground(new java.awt.Color(204, 204, 204));
-
-        HrInBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrInBox8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrInBox8ActionPerformed(evt);
-            }
-        });
-
-        jLabel35.setText(":");
-
-        MinInBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodInBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        jLabel36.setText("--------------to---------------");
-        jLabel36.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        HrOutBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrOutBox8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrOutBox8ActionPerformed(evt);
-            }
-        });
-
-        jLabel37.setText(":");
-
-        MinOutBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodOutBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        javax.swing.GroupLayout timeRange8Layout = new javax.swing.GroupLayout(timeRange8);
-        timeRange8.setLayout(timeRange8Layout);
-        timeRange8Layout.setHorizontalGroup(
-            timeRange8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange8Layout.createSequentialGroup()
-                .addComponent(HrInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel35)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(HrOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jSeparator9)
-        );
-        timeRange8Layout.setVerticalGroup(
-            timeRange8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange8Layout.createSequentialGroup()
-                .addGroup(timeRange8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HrInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35)
-                    .addComponent(MinInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodInBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HrOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel37)
-                    .addComponent(MinOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodOutBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout MondayInnerPanel2Layout = new javax.swing.GroupLayout(MondayInnerPanel2);
         MondayInnerPanel2.setLayout(MondayInnerPanel2Layout);
         MondayInnerPanel2Layout.setHorizontalGroup(
             MondayInnerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(timeRange8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         MondayInnerPanel2Layout.setVerticalGroup(
             MondayInnerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MondayInnerPanel2Layout.createSequentialGroup()
-                .addComponent(timeRange8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 417, Short.MAX_VALUE))
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         MondayScrollPane2.setViewportView(MondayInnerPanel2);
@@ -506,90 +230,15 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
         MondayInnerPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        timeRange9.setBackground(new java.awt.Color(204, 204, 204));
-
-        HrInBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrInBox9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrInBox9ActionPerformed(evt);
-            }
-        });
-
-        jLabel38.setText(":");
-
-        MinInBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodInBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        jLabel39.setText("--------------to---------------");
-        jLabel39.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        HrOutBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrOutBox9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrOutBox9ActionPerformed(evt);
-            }
-        });
-
-        jLabel40.setText(":");
-
-        MinOutBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodOutBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        javax.swing.GroupLayout timeRange9Layout = new javax.swing.GroupLayout(timeRange9);
-        timeRange9.setLayout(timeRange9Layout);
-        timeRange9Layout.setHorizontalGroup(
-            timeRange9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange9Layout.createSequentialGroup()
-                .addComponent(HrInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel38)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(HrOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel40)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jSeparator10)
-        );
-        timeRange9Layout.setVerticalGroup(
-            timeRange9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange9Layout.createSequentialGroup()
-                .addGroup(timeRange9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HrInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38)
-                    .addComponent(MinInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodInBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HrOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40)
-                    .addComponent(MinOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodOutBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout MondayInnerPanel3Layout = new javax.swing.GroupLayout(MondayInnerPanel3);
         MondayInnerPanel3.setLayout(MondayInnerPanel3Layout);
         MondayInnerPanel3Layout.setHorizontalGroup(
             MondayInnerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(timeRange9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         MondayInnerPanel3Layout.setVerticalGroup(
             MondayInnerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MondayInnerPanel3Layout.createSequentialGroup()
-                .addComponent(timeRange9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 417, Short.MAX_VALUE))
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         MondayScrollPane3.setViewportView(MondayInnerPanel3);
@@ -629,90 +278,15 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
         MondayInnerPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
-        timeRange10.setBackground(new java.awt.Color(204, 204, 204));
-
-        HrInBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrInBox10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrInBox10ActionPerformed(evt);
-            }
-        });
-
-        jLabel41.setText(":");
-
-        MinInBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodInBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        jLabel42.setText("--------------to---------------");
-        jLabel42.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        HrOutBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        HrOutBox10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HrOutBox10ActionPerformed(evt);
-            }
-        });
-
-        jLabel43.setText(":");
-
-        MinOutBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
-
-        PeriodOutBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
-
-        javax.swing.GroupLayout timeRange10Layout = new javax.swing.GroupLayout(timeRange10);
-        timeRange10.setLayout(timeRange10Layout);
-        timeRange10Layout.setHorizontalGroup(
-            timeRange10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange10Layout.createSequentialGroup()
-                .addComponent(HrInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel41)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(HrOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel43)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MinOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeriodOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jSeparator11)
-        );
-        timeRange10Layout.setVerticalGroup(
-            timeRange10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(timeRange10Layout.createSequentialGroup()
-                .addGroup(timeRange10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HrInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41)
-                    .addComponent(MinInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodInBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HrOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel43)
-                    .addComponent(MinOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeriodOutBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel42))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout MondayInnerPanel4Layout = new javax.swing.GroupLayout(MondayInnerPanel4);
         MondayInnerPanel4.setLayout(MondayInnerPanel4Layout);
         MondayInnerPanel4Layout.setHorizontalGroup(
             MondayInnerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(timeRange10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         MondayInnerPanel4Layout.setVerticalGroup(
             MondayInnerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MondayInnerPanel4Layout.createSequentialGroup()
-                .addComponent(timeRange10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 417, Short.MAX_VALUE))
+            .addGap(0, 445, Short.MAX_VALUE)
         );
 
         MondayScrollPane4.setViewportView(MondayInnerPanel4);
@@ -759,6 +333,13 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
             }
         });
 
+        jButton1.setText("Refresh");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -772,6 +353,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                         .addComponent(LocationBar))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(AddTime)
+                        .addGap(200, 200, 200)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(UpdateButton))
                     .addComponent(ProfessorChangeScheduleTabList))
@@ -788,7 +371,9 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(ProfessorChangeScheduleTabList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddTime)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AddTime)
+                        .addComponent(jButton1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(UpdateButton)
                         .addContainerGap())))
@@ -803,11 +388,17 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-        //for(int i=0;i<innerPanel.getComponentCount();i++){
-        //    System.out.println(innerPanel.getComponent(i));
+        
+        
+        
+        //int componentCount = innerPanel.getComponentCount();
+        //innerPanel.removeAll();
+        //for(int i=0;i<4;i++){
+        //    innerPanel.add(temp).setLocation(0, 30 * i+1);
+        //    innerPanel.validate();
         //}
         int count = innerPanel.getComponentCount();
-        innerPanel.add(temp).setLocation(0, 30 * count);
+        innerPanel.add(temp).setLocation(0, 30 * count+1);
         innerPanel.validate();
     }//GEN-LAST:event_AddTimeActionPerformed
 
@@ -816,45 +407,19 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_LocationBarActionPerformed
 
-    private void HrInBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrInBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrInBox6ActionPerformed
-
-    private void HrOutBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrOutBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrOutBox6ActionPerformed
-
-    private void HrInBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrInBox7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrInBox7ActionPerformed
-
-    private void HrOutBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrOutBox7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrOutBox7ActionPerformed
-
-    private void HrInBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrInBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrInBox8ActionPerformed
-
-    private void HrOutBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrOutBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrOutBox8ActionPerformed
-
-    private void HrInBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrInBox9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrInBox9ActionPerformed
-
-    private void HrOutBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrOutBox9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrOutBox9ActionPerformed
-
-    private void HrInBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrInBox10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrInBox10ActionPerformed
-
-    private void HrOutBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HrOutBox10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_HrOutBox10ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getSelectedComponent();
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+        JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+        JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+        Component list[] = innerPanel.getComponents();
+        for(int i=0;i<innerPanel.getComponents().length-1;i++){
+            TimeRange temp = (TimeRange) list[i];
+            System.out.println(temp.getComponents());
+            
+        }
+        repaint();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -900,28 +465,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddTime;
     private javax.swing.JPanel Friday;
-    private javax.swing.JComboBox HrInBox10;
-    private javax.swing.JComboBox HrInBox6;
-    private javax.swing.JComboBox HrInBox7;
-    private javax.swing.JComboBox HrInBox8;
-    private javax.swing.JComboBox HrInBox9;
-    private javax.swing.JComboBox HrOutBox10;
-    private javax.swing.JComboBox HrOutBox6;
-    private javax.swing.JComboBox HrOutBox7;
-    private javax.swing.JComboBox HrOutBox8;
-    private javax.swing.JComboBox HrOutBox9;
     private javax.swing.JTextField LocationBar;
     private javax.swing.JLabel LocationLabel;
-    private javax.swing.JComboBox MinInBox10;
-    private javax.swing.JComboBox MinInBox6;
-    private javax.swing.JComboBox MinInBox7;
-    private javax.swing.JComboBox MinInBox8;
-    private javax.swing.JComboBox MinInBox9;
-    private javax.swing.JComboBox MinOutBox10;
-    private javax.swing.JComboBox MinOutBox6;
-    private javax.swing.JComboBox MinOutBox7;
-    private javax.swing.JComboBox MinOutBox8;
-    private javax.swing.JComboBox MinOutBox9;
     private javax.swing.JPanel Monday;
     private javax.swing.JPanel MondayInnerPanel;
     private javax.swing.JPanel MondayInnerPanel1;
@@ -933,21 +478,12 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane MondayScrollPane2;
     private javax.swing.JScrollPane MondayScrollPane3;
     private javax.swing.JScrollPane MondayScrollPane4;
-    private javax.swing.JComboBox PeriodInBox10;
-    private javax.swing.JComboBox PeriodInBox6;
-    private javax.swing.JComboBox PeriodInBox7;
-    private javax.swing.JComboBox PeriodInBox8;
-    private javax.swing.JComboBox PeriodInBox9;
-    private javax.swing.JComboBox PeriodOutBox10;
-    private javax.swing.JComboBox PeriodOutBox6;
-    private javax.swing.JComboBox PeriodOutBox7;
-    private javax.swing.JComboBox PeriodOutBox8;
-    private javax.swing.JComboBox PeriodOutBox9;
     private javax.swing.JTabbedPane ProfessorChangeScheduleTabList;
     private javax.swing.JPanel Thursday;
     private javax.swing.JPanel Tuesday;
     private javax.swing.JButton UpdateButton;
     private javax.swing.JPanel Wednesday;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
@@ -955,33 +491,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JPanel timeRange10;
-    private javax.swing.JPanel timeRange6;
-    private javax.swing.JPanel timeRange7;
-    private javax.swing.JPanel timeRange8;
-    private javax.swing.JPanel timeRange9;
     // End of variables declaration//GEN-END:variables
 }

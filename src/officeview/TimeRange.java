@@ -139,7 +139,7 @@ public class TimeRange extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //ProfessorChangeScheduleDialog.delete();
-        this.getParent().getComponentCount();
+        
         this.getParent().remove(this);
         //this.getParent().revalidate();
         //repaint();

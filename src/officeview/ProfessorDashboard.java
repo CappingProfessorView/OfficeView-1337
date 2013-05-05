@@ -15,6 +15,7 @@ import javax.swing.JWindow;
  */
 public class ProfessorDashboard extends javax.swing.JFrame{
 
+    private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
     /**
      * Creates new form ProfessorMainWindow
      */
@@ -22,6 +23,7 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
+        System.out.println(prof);
     }
 
     /**
@@ -207,6 +209,8 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         this.CurrentActiveStatus.setText("Available");
         this.Available.setSelected(true);
+        String profName = prof.getFirstName() + " " + prof.getLastName();
+        this.ProfessorDashboardNameLabel.setText(profName);
     }//GEN-LAST:event_formWindowActivated
 
     /**

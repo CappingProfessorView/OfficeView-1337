@@ -157,6 +157,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"The username or password you entered is incorrect");
             }
             else{
+                OfficeView.currentUserID = prof.getId();
                 ProfessorDashboard dash = new ProfessorDashboard();
                 dash.setVisible(true);
                 this.dispose();
