@@ -30,6 +30,7 @@ public class Professor{
     private String announcement = null;
     private String userName = null;
     private int passwordHash = 0;
+    private String location = null;
     private School school = null;
     /* status key: 
      * 0 = not available
@@ -41,11 +42,13 @@ public class Professor{
     
     public Professor(){}
     
-    public Professor(String firstName, String lastName, Schedule schedule, 
+    public Professor(String firstName, String lastName, String location, Schedule schedule, 
                     String announcement, String userName, String password,
                     School school){
+        setId();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.location = location;
         this.schedule = schedule;
         this.announcement = announcement;
         this.userName = userName;
@@ -53,11 +56,17 @@ public class Professor{
         this.school = school;
     }
     
+    public String getProfessor(){
+        return this.getFirstName() + " " + this.getLastName() + "\n" + 
+                    this.getLocation() + "\n" + this.getStatus();
+    }
+    
     public Integer getId() {
         return this.id;
     }
     
-    private void setId() {
+    private void 
+            setId() {
         id = userName.hashCode();
     }
     
@@ -96,6 +105,14 @@ public class Professor{
     
     public Schedule getSchedule() {
         return schedule;
+    }
+    
+    public String getLocation(){
+        return location;
+    }
+    
+    public void setLocation(String loc){
+        this.location = loc;
     }
     
     public String getStatus(){

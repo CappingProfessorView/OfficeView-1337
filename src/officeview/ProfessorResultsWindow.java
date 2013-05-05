@@ -42,7 +42,7 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jScrollPane2.setBounds(0, 0, 130, 290);
+        jScrollPane2.setBounds(0, 0, 190, 300);
         jLayeredPane1.add(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -81,7 +81,7 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
         jTable2.getColumnModel().getColumn(0).setMaxWidth(60);
         jTable2.getColumnModel().getColumn(1).setResizable(false);
 
-        jScrollPane3.setBounds(130, 170, 310, 110);
+        jScrollPane3.setBounds(190, 0, 410, 300);
         jLayeredPane1.add(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("File");
@@ -96,12 +96,12 @@ public class ProfessorResultsWindow extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
