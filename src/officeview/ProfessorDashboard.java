@@ -207,6 +207,7 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         this.CurrentActiveStatus.setText("Available");
         this.Available.setSelected(true);
+        this.ProfessorDashboardNameLabel.setText(Professor.class.getName());
     }//GEN-LAST:event_formWindowActivated
 
     /**
