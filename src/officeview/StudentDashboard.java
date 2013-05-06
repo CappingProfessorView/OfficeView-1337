@@ -195,6 +195,8 @@ public class StudentDashboard extends javax.swing.JFrame {
         //Iterable<Professor> temp = OfficeView.professors.find("{school: #}",school).as(Professor.class);
         
         //returnResults(temp.iterator());
+        String school = SchoolComboBox.getSelectedItem().toString();
+        System.out.println(school);
     }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
 
     private void LastNameBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameBoxKeyPressed

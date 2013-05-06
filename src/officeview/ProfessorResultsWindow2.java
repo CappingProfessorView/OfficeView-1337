@@ -6,12 +6,15 @@ package officeview;
 
 import java.awt.Toolkit;
 import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  *
  * @author Mike
  */
 public class ProfessorResultsWindow2 extends javax.swing.JDialog {
+    
+    ArrayList<String> profList;
 
     /**
      * Creates new form ProfessorResultsWindow2
@@ -19,16 +22,17 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
     public ProfessorResultsWindow2(){}
     public ProfessorResultsWindow2(Iterator results) {
         //super(parent, modal);
+        profList = new ArrayList<String>();
         initComponents();
         //setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
-        String tmp = "";
         while (results.hasNext()){
-            tmp += results.next();
-            
+            profList.add(results.next().toString());
+            SingleProfessorResult temp = new SingleProfessorResult();
+            jScrollPane2.add(temp).setLocation(0,0);
+            jScrollPane2.validate();
         }
-        profsLabel.setText(tmp);
     }
 
     /**

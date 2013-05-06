@@ -15,6 +15,9 @@ public class SingleProfessorResult extends javax.swing.JPanel {
      */
     public SingleProfessorResult() {
         initComponents();
+        setVisible(true);
+        setSize(getPreferredSize());
+        
         //jLabel6.setText("Mayday this is not a test \n");
     }
 
@@ -42,6 +45,10 @@ public class SingleProfessorResult extends javax.swing.JPanel {
 
         statusIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/officeview/icon3.png"))); // NOI18N
 
+        jButton2.setMaximumSize(new java.awt.Dimension(50, 29));
+        jButton2.setMinimumSize(new java.awt.Dimension(50, 29));
+        jButton2.setPreferredSize(new java.awt.Dimension(50, 29));
+        jButton2.setSize(new java.awt.Dimension(50, 29));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -76,9 +83,9 @@ public class SingleProfessorResult extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(locationField)
                     .addComponent(nameField))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
