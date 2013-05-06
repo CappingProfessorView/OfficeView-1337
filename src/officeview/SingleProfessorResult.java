@@ -80,7 +80,7 @@ public class SingleProfessorResult extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(locationField)
                     .addComponent(nameField))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
         );
