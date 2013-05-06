@@ -16,31 +16,31 @@ import javax.swing.JViewport;
  * @author Mike
  */
 public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
-    
+
     ArrayList display = new ArrayList();
-    
+
     /**
      * Creates new form ProfessorChangeScheduleDialog
      */
     public ProfessorChangeScheduleDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
+        setLocation((OfficeView.screensize.width / 2 - (this.getWidth() / 2)), (OfficeView.screensize.height / 2 - (this.getHeight() / 2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
         Professor prof = ProfessorDashboard.getProfessor();
         Schedule profSched = prof.getSchedule();
         /*for (int i=0;i<5;i++){
-            TimeRange temp = new TimeRange();
-            JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
-            JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
-            JViewport scrollView = (JViewport) scrollPane.getComponent(0);
-            JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-            for(Day day : profSched){
+         TimeRange temp = new TimeRange();
+         JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
+         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+         for(Day day : profSched){
             
-            } 
-        }*/
- 
-        
+         } 
+         }*/
+
+
     }
 
     /**
@@ -103,11 +103,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayInnerPanel.setLayout(MondayInnerPanelLayout);
         MondayInnerPanelLayout.setHorizontalGroup(
             MondayInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         MondayInnerPanelLayout.setVerticalGroup(
             MondayInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 305, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         MondayScrollPane.setViewportView(MondayInnerPanel);
@@ -121,8 +121,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                .addGap(121, 121, 121))
+            .addComponent(MondayScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
         );
         MondayLayout.setVerticalGroup(
             MondayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +151,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayInnerPanel1.setLayout(MondayInnerPanel1Layout);
         MondayInnerPanel1Layout.setHorizontalGroup(
             MondayInnerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         MondayInnerPanel1Layout.setVerticalGroup(
             MondayInnerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         MondayScrollPane1.setViewportView(MondayInnerPanel1);
@@ -170,7 +170,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
         );
         TuesdayLayout.setVerticalGroup(
             TuesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,11 +199,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayInnerPanel2.setLayout(MondayInnerPanel2Layout);
         MondayInnerPanel2Layout.setHorizontalGroup(
             MondayInnerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         MondayInnerPanel2Layout.setVerticalGroup(
             MondayInnerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         MondayScrollPane2.setViewportView(MondayInnerPanel2);
@@ -218,7 +218,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
         );
         WednesdayLayout.setVerticalGroup(
             WednesdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,11 +247,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayInnerPanel3.setLayout(MondayInnerPanel3Layout);
         MondayInnerPanel3Layout.setHorizontalGroup(
             MondayInnerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         MondayInnerPanel3Layout.setVerticalGroup(
             MondayInnerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         MondayScrollPane3.setViewportView(MondayInnerPanel3);
@@ -266,7 +266,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
         );
         ThursdayLayout.setVerticalGroup(
             ThursdayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,11 +295,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayInnerPanel4.setLayout(MondayInnerPanel4Layout);
         MondayInnerPanel4Layout.setHorizontalGroup(
             MondayInnerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         MondayInnerPanel4Layout.setVerticalGroup(
             MondayInnerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
         MondayScrollPane4.setViewportView(MondayInnerPanel4);
@@ -314,7 +314,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel27)
                 .addGap(116, 116, 116))
-            .addComponent(MondayScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(MondayScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
         );
         FridayLayout.setVerticalGroup(
             FridayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,13 +397,13 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
     private void AddTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTimeActionPerformed
         TimeRange temp = new TimeRange();
-        JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getSelectedComponent();
-        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+        JPanel tab = (JPanel) ProfessorChangeScheduleTabList.getSelectedComponent();
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-        
-        
-        
+
+
+
         //int componentCount = innerPanel.getComponentCount();
         //innerPanel.removeAll();
         //for(int i=0;i<4;i++){
@@ -411,25 +411,24 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         //    innerPanel.validate();
         //}
         int count = innerPanel.getComponentCount();
-        innerPanel.add(temp).setLocation(0, 30 * count+1);
+        innerPanel.add(temp).setLocation(0, 30 * count + 1);
         innerPanel.validate();
     }//GEN-LAST:event_AddTimeActionPerformed
 
-       
     private void LocationBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationBarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LocationBarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getSelectedComponent();
-        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+        JPanel tab = (JPanel) ProfessorChangeScheduleTabList.getSelectedComponent();
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
         Component list[] = innerPanel.getComponents();
-        for(int i=0;i<innerPanel.getComponents().length-1;i++){
+        for (int i = 0; i < innerPanel.getComponents().length - 1; i++) {
             TimeRange temp = (TimeRange) list[i];
             System.out.println(temp.getComponents());
-            
+
         }
         repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
