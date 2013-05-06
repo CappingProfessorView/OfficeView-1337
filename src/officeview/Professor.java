@@ -154,11 +154,11 @@ public class Professor{
     @Override
     public String toString (){
         if(this.getSchedule() != null){
-            return this.getFirstName() + " " + this.getLastName() + "\n" + 
-                    this.getStatus() + "\n" + this.getSchedule() + this.getSchool();
+            return "<html>" + this.getFirstName() + " " + this.getLastName() + "<br>" + 
+                    this.getStatus() + "<br>" + this.getSchedule() + this.getSchool() + "</html>";
         }
-        return this.getFirstName() + " " + this.getLastName() + "\n" +
-                this.getStatus() + "\nOffice hours not available.\n" + this.getSchool();
+        return "<html>" + this.getFirstName() + " " + this.getLastName() + "<br>" +
+                this.getStatus() + "<br>Office hours not available.<br>" + this.getSchool() + "</html>";
     }
     
     public School getSchool(){

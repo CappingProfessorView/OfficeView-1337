@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import officeview.OfficeView.School;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -244,13 +245,15 @@ public class StudentDashboard extends javax.swing.JFrame {
     
     private void returnResults(Iterator results){
         if (!results.hasNext()){
-            System.out.println("No professors found");
+            JOptionPane.showMessageDialog(this,"No professors found");
         }
         else{
-            while (results.hasNext()){
-                System.out.println(results.next());
-                System.out.println();
-            }
+            ProfessorResultsWindow2 resultsWindow = new ProfessorResultsWindow2(results);
+            resultsWindow.setVisible(true);
+            //while (results.hasNext()){
+                //System.out.println(results.next());
+                //System.out.println();
+            //}
             
         }
     }

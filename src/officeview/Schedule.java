@@ -72,7 +72,7 @@ public class Schedule{
     
     
     public String toString(){
-        String result = "Office Hours:\n";
+        String result = "Office Hours:<br>";
         if(monday != null)
             result += "Monday: "+monday.getTimes();
         if(tuesday != null)
@@ -83,7 +83,7 @@ public class Schedule{
             result += "Thursday: "+thursday.getTimes();
         if(friday != null)
             result += "Friday: "+friday.getTimes();
-        if(result.equals("Office Hours:\n") || this == null)
+        if(result.equals("Office Hours:<br>") || this == null)
             result = "Office hours not available.";
         return result;
     }
