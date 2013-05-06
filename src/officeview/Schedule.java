@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Mike
@@ -67,6 +69,7 @@ public class Schedule{
     public void setFriday(Day d){
       this.friday = d;
     }
+    
     
     public String toString(){
         String result = "Office Hours:\n";

@@ -45,7 +45,6 @@ public class Professor{
     public Professor(String firstName, String lastName, String location, Schedule schedule, 
                     String announcement, String userName, String password,
                     School school){
-        setId();
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
@@ -54,6 +53,7 @@ public class Professor{
         this.userName = userName;
         this.passwordHash = password.hashCode();
         this.school = school;
+        setId();
     }
     
     public String getProfessor(){
@@ -65,8 +65,7 @@ public class Professor{
         return this.id;
     }
     
-    private void 
-            setId() {
+    private void setId() {
         id = userName.hashCode();
     }
     

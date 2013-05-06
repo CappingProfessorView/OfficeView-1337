@@ -26,7 +26,20 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));  
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
+        Professor prof = ProfessorDashboard.getProfessor();
+        Schedule profSched = prof.getSchedule();
+        /*for (int i=0;i<5;i++){
+            TimeRange temp = new TimeRange();
+            JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
+            JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+            JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+            JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+            for(Day day : profSched){
+            
+            } 
+        }*/
+ 
         
     }
 
