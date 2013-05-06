@@ -4,15 +4,18 @@
  */
 package officeview;
 
+import java.awt.Color;
+
 /**
  *
  * @author Mike
  */
 public class SingleProfessorResult extends javax.swing.JPanel {
 
-    /**
+    /**private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
      * Creates new form SingleProfessorResult
      */
+    private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
     public SingleProfessorResult() {
         initComponents();
         setVisible(true);
@@ -120,8 +123,22 @@ public class SingleProfessorResult extends javax.swing.JPanel {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
+        jButton2.setBackground(Color.yellow);
+        System.out.println("test");
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        //this.CurrentActiveStatus.setText("Available");
+        //this.Available.setSelected(true);
+        String profName = prof.getFirstName() + " " + prof.getLastName();
+        String profLocation = prof.getLocation();
+        this.nameLabel.setText(profName);
+        this.locationLabel.setText(profLocation);
+    }                                    
+
+    public static Professor getProfessor(){
+        return prof;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel locationField;

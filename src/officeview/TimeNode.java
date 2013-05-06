@@ -4,6 +4,8 @@
  */
 package officeview;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Mike
@@ -13,6 +15,7 @@ public class TimeNode{
   private int hourIn, minIn, hourOut, minOut;
   private String periodIn, periodOut;
   private TimeNode next;
+  DecimalFormat minFormat = new DecimalFormat ("###00");
   
   public TimeNode(){
     hourIn = 0;
@@ -38,6 +41,7 @@ public class TimeNode{
   }
 
   public int getMinIn(){
+    //String.format("%[B]02d[/B]",
     return minIn;
   }
 
@@ -134,7 +138,7 @@ public class TimeNode{
     TimeNode next = new TimeNode(hin, min, pin, hout, mout, pout);
     getLast().setNext(next);
   }
-  
+  @Override
   /**
    * Modifies the printing of a node.
    * @return String containing desired text to be outputed by print and println calls
@@ -144,10 +148,11 @@ public class TimeNode{
     int size = 0;
     TimeNode current = this;
     while(current != null){
-      times += current.getHourIn()+":"+current.getMinIn()+" "+current.getPeriodIn()+" - "+
-        current.getHourOut()+":"+current.getMinOut()+" "+current.getPeriodOut()+"<br>";
+      times += minFormat.format(current.getHourIn()) + ":" + minFormat.format(current.getMinIn()) + " " + current.getPeriodIn() + " - " +
+        minFormat.format(current.getHourOut()) + ":" + minFormat.format(current.getMinOut()) + " " + current.getPeriodOut()+"<br>";
       size++;
       current = current.next;
+      //System.out.println(String.format("%[B]02d[/B]", x));  
     }
     return times;
   }
