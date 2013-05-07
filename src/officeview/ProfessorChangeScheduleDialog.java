@@ -7,6 +7,9 @@ package officeview;
 import java.awt.Component;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
@@ -401,16 +404,14 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-
-
-
-        //int componentCount = innerPanel.getComponentCount();
-        //innerPanel.removeAll();
-        //for(int i=0;i<4;i++){
-        //    innerPanel.add(temp).setLocation(0, 30 * i+1);
-        //    innerPanel.validate();
-        //}
         int count = innerPanel.getComponentCount();
+        
+        
+        /*for(int i=0;i<count+1;i++){
+            innerPanel.add(temp).setLocation(0, 30 * i+1);
+            innerPanel.validate();
+        }*/
+        
         innerPanel.add(temp).setLocation(0, 30 * count + 1);
         innerPanel.validate();
     }//GEN-LAST:event_AddTimeActionPerformed
@@ -425,12 +426,23 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
         Component list[] = innerPanel.getComponents();
-        for (int i = 0; i < innerPanel.getComponents().length - 1; i++) {
+        Boolean isBlank = false;
+        for (int i = 0; i < list.length; i++) {
             TimeRange temp = (TimeRange) list[i];
-            System.out.println(temp.getComponents());
-
+            //Loop check each combobox for blank
+            for (int j=0; j<temp.getComboValues().size() && !isBlank;j++) {
+                if (temp.getComboValues().get(j).getSelectedItem().equals(" ")) {
+                    //System.out.println("yes");
+                    isBlank = true;
+                    JOptionPane.showMessageDialog(this,"Please fill in all fields");
+                }
+                else{
+                    isBlank = false;
+                }
+            }
+                //System.out.println(temp.getComboValue().get(i).getSelectedItem());
         }
-        repaint();
+        //repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
