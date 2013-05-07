@@ -92,7 +92,7 @@
                           <Component id="FirstNameBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                      <EmptySpace pref="75" max="32767" attributes="0"/>
                       <Component id="SearchByNameButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -163,7 +163,7 @@
                           <Component id="SchoolComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="68" max="32767" attributes="0"/>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
                       <Component id="SearchBySchoolButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>

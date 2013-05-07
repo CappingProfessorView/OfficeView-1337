@@ -18,7 +18,9 @@ public class SingleProfessorResult extends javax.swing.JPanel {
     private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
     public SingleProfessorResult() {
         initComponents();
-        nameLabel.setText("cake");
+        setVisible(true);
+        setSize(getPreferredSize());
+        validate();
         //jLabel6.setText("Mayday this is not a test \n");
     }
 
@@ -31,13 +33,15 @@ public class SingleProfessorResult extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         statusIcon = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         nameLabel = new javax.swing.JLabel();
+        nameField = new javax.swing.JLabel();
         locationLabel = new javax.swing.JLabel();
         locationField = new javax.swing.JLabel();
-        nameField = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(190, 100));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -45,7 +49,29 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         });
 
         statusIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/officeview/icon3.png"))); // NOI18N
+        statusIcon.setBounds(10, 10, 62, 63);
+        jLayeredPane1.add(statusIcon, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        nameLabel.setText("Professor:");
+        nameLabel.setBounds(90, 20, 50, 14);
+        jLayeredPane1.add(nameLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        nameField.setText("jLabel1");
+        nameField.setBounds(150, 20, 34, 14);
+        jLayeredPane1.add(nameField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        locationLabel.setText("Location:");
+        locationLabel.setBounds(90, 40, 44, 14);
+        jLayeredPane1.add(locationLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        locationField.setText("jLabel1");
+        locationField.setBounds(150, 40, 34, 14);
+        jLayeredPane1.add(locationField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jButton2.setMaximumSize(new java.awt.Dimension(50, 29));
+        jButton2.setMinimumSize(new java.awt.Dimension(50, 29));
+        jButton2.setOpaque(false);
+        jButton2.setPreferredSize(new java.awt.Dimension(50, 29));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -56,53 +82,18 @@ public class SingleProfessorResult extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        nameLabel.setText("Professor:");
-
-        locationLabel.setText("Location:");
-
-        locationField.setText("jLabel1");
-
-        nameField.setText("jLabel1");
+        jButton2.setBounds(0, 0, 190, 80);
+        jLayeredPane1.add(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(statusIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nameLabel)
-                    .addComponent(locationLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(locationField)
-                    .addComponent(nameField))
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(statusIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nameLabel)
-                            .addComponent(nameField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(locationLabel)
-                            .addComponent(locationField))))
-                .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -117,7 +108,7 @@ public class SingleProfessorResult extends javax.swing.JPanel {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        jButton2.setBackground(Color.yellow);
+        //jButton2.setBackground(Color.yellow);
         System.out.println("test");
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -135,6 +126,7 @@ public class SingleProfessorResult extends javax.swing.JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLabel locationField;
     private javax.swing.JLabel locationLabel;
     private javax.swing.JLabel nameField;
