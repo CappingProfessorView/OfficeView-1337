@@ -196,7 +196,9 @@ public class StudentDashboard extends javax.swing.JFrame {
         
         //returnResults(temp.iterator());
         String school = SchoolComboBox.getSelectedItem().toString();
-        System.out.println(school);
+        Iterable<Professor> temp = OfficeView.professors.find(
+                "{school: #}",school).as(Professor.class);
+        returnResults(temp.iterator());
     }//GEN-LAST:event_SearchBySchoolButtonActionPerformed
 
     private void LastNameBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LastNameBoxKeyPressed
@@ -224,7 +226,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 "{firstName: #}",firstName).as(Professor.class);
             results = temp.iterator();
         }
-        else{
+        else if(!firstName.equals("") && !lastName.equals("")){
             Iterable<Professor> temp = OfficeView.professors.find(
                 "{firstName: #, lastName: #}",firstName,lastName).as(Professor.class);
             results = temp.iterator();

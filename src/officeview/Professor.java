@@ -31,7 +31,7 @@ public class Professor{
     private String userName = null;
     private int passwordHash = 0;
     private String location = null;
-    private School school = null;
+    private String school = "";
     /* status key: 
      * 0 = not available
      * 1 = available
@@ -44,7 +44,7 @@ public class Professor{
     
     public Professor(String firstName, String lastName, String location, Schedule schedule, 
                     String announcement, String userName, String password,
-                    School school){
+                    int school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
@@ -52,7 +52,22 @@ public class Professor{
         this.announcement = announcement;
         this.userName = userName;
         this.passwordHash = password.hashCode();
-        this.school = school;
+        switch(school){
+            case 0: this.school = "Communication & the Arts";
+                break;
+            case 1: this.school = "Computer Science & Mathematics";
+                break;
+            case 2: this.school = "Global and Professional Programs";
+                break;
+            case 3: this.school = "Liberal Arts";
+                break;
+            case 4: this.school = "Management";
+                break;
+            case 5: this.school = "Science";
+                break;
+            case 6: this.school = "Social & Behavioral Sciences";
+                break;
+        }
         setId();
     }
     
@@ -161,10 +176,10 @@ public class Professor{
                 this.getStatus() + "<br>Office hours not available.<br>" + this.getSchool() + "</html>";
     }
     
-    public School getSchool(){
+    public String getSchool(){
         return this.school;
     }
-    public void setSchool(School school){
+    /*public void setSchool(School school){
         this.school = school;
-    }
+    }*/
 }

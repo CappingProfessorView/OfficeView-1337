@@ -14,28 +14,34 @@ import java.util.ArrayList;
  */
 public class ProfessorResultsWindow2 extends javax.swing.JDialog {
     
-    ArrayList<String> profList;
+    //ArrayList<String> profList;
 
     /**
      * Creates new form ProfessorResultsWindow2
      */
     public ProfessorResultsWindow2(){}
-    public ProfessorResultsWindow2(Iterator results) {
+    public ProfessorResultsWindow2(Iterator<Professor> results) {
         //super(parent, modal);
-        profList = new ArrayList<String>();
+        //profList = new ArrayList<String>();
         initComponents();
         //setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
-        /*while (results.hasNext()){
-            profList.add(results.next().toString());
-            SingleProfessorResult temp = new SingleProfessorResult();
-            jScrollPane2.add(temp).setLocation(0,0);
+        int i = 0;
+        while (results.hasNext()){
+            Professor tmpProf = results.next();
+            if(i == 0)
+                profsLabel.setText(tmpProf.toString());
+            //profList.add(tmpProf.toString());
+            SingleProfessorResult temp = new SingleProfessorResult(this,tmpProf);
+            jScrollPane2.add(temp).setLocation(0,i*100);
             jScrollPane2.validate();
-        }*/
-        SingleProfessorResult temp = new SingleProfessorResult();
-            jScrollPane2.add(temp).setLocation(0,0);
-            jScrollPane2.validate();
+            i++;
+        }
+    }
+    
+    public void setProfsLabel(String s){
+        profsLabel.setText(s);
     }
 
     /**
