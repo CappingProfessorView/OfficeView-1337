@@ -21,16 +21,19 @@ import javax.swing.JViewport;
 public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
 
     ArrayList display = new ArrayList();
+    Professor prof;
 
     /**
      * Creates new form ProfessorChangeScheduleDialog
      */
-    public ProfessorChangeScheduleDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public ProfessorChangeScheduleDialog(){}
+    public ProfessorChangeScheduleDialog(Professor prof) {
+        //super(parent, modal);
+        super();
         initComponents();
         setLocation((OfficeView.screensize.width / 2 - (this.getWidth() / 2)), (OfficeView.screensize.height / 2 - (this.getHeight() / 2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
-        Professor prof = ProfessorDashboard.getProfessor();
+        this.prof = prof;
         Schedule profSched = prof.getSchedule();
         /*for (int i=0;i<5;i++){
          TimeRange temp = new TimeRange();
@@ -475,7 +478,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ProfessorChangeScheduleDialog dialog = new ProfessorChangeScheduleDialog(new javax.swing.JFrame(), true);
+                ProfessorChangeScheduleDialog dialog = new ProfessorChangeScheduleDialog(/*new javax.swing.JFrame(), true*/);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

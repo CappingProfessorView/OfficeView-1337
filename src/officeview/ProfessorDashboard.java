@@ -15,11 +15,14 @@ import javax.swing.JWindow;
  */
 public class ProfessorDashboard extends javax.swing.JFrame{
 
-    private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
+    //private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
+    private Professor prof;
     /**
      * Creates new form ProfessorMainWindow
      */
-    public ProfessorDashboard() {
+    public ProfessorDashboard(){}
+    public ProfessorDashboard(Professor prof) {
+        this.prof = prof;
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
@@ -192,7 +195,7 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     }//GEN-LAST:event_BeBackSoonActionPerformed
 
     private void ScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleActionPerformed
-       ProfessorChangeScheduleDialog popup = new ProfessorChangeScheduleDialog(this, true);
+       ProfessorChangeScheduleDialog popup = new ProfessorChangeScheduleDialog(prof);
        popup.setVisible(true);
     }//GEN-LAST:event_ScheduleActionPerformed
 
@@ -212,7 +215,7 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         this.ProfessorDashboardNameLabel.setText(profName);
     }//GEN-LAST:event_formWindowActivated
 
-    public static Professor getProfessor(){
+    public Professor getProfessor(){
         return prof;
     }
     /**

@@ -7,7 +7,7 @@ package officeview;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
-import officeview.OfficeView.School;
+//import officeview.OfficeView.School;
 import javax.swing.JOptionPane;
 
 /**
@@ -216,12 +216,12 @@ public class StudentDashboard extends javax.swing.JFrame {
         String lastName = this.LastNameBox.getText().toLowerCase();
         Iterator<Professor> results = null;
         
-        if (firstName.equals("")){
+        if (firstName.equals("") && !lastName.equals("")){
             Iterable<Professor> temp = OfficeView.professors.find(
                 "{lastName: #}",lastName).as(Professor.class);
             results = temp.iterator();
         }
-        else if(lastName.equals("")){
+        else if(lastName.equals("") && !firstName.equals("")){
             Iterable<Professor> temp = OfficeView.professors.find(
                 "{firstName: #}",firstName).as(Professor.class);
             results = temp.iterator();
@@ -236,7 +236,7 @@ public class StudentDashboard extends javax.swing.JFrame {
     } 
     
     
-    private static School searchEnum(String text) {
+    /*private static School searchEnum(String text) {
         if (text != null) {
           for (School s : School.values()) {
               //if (text.equalsIgnoreCase(s.name().toString())) {
@@ -245,7 +245,7 @@ public class StudentDashboard extends javax.swing.JFrame {
           }
         }
         return null;
-    }
+    }*/
     
     private void returnResults(Iterator results){
         if (!results.hasNext()){

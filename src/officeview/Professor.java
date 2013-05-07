@@ -6,7 +6,7 @@ package officeview;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
-import officeview.OfficeView.School;
+//import officeview.OfficeView.School;
 import org.bson.types.ObjectId;
 
 /**
@@ -15,14 +15,14 @@ import org.bson.types.ObjectId;
  */
 public class Professor{
     
-    @JsonProperty("_id")
-    private ObjectId key = null;
+    //@JsonProperty("_id")
+    //private ObjectId key = null;
     
     /** Order system id */
-    protected Integer id = -1;
+    //protected Integer id = -1;
     
     /** Order system update date */
-    protected Date updateDate = null;
+    //protected Date updateDate = null;
 
     private String firstName = null;
     private String lastName = null;
@@ -43,8 +43,7 @@ public class Professor{
     public Professor(){}
     
     public Professor(String firstName, String lastName, String location, Schedule schedule, 
-                    String announcement, String userName, String password,
-                    int school){
+                    String announcement, String userName, String password, String school){
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
@@ -52,23 +51,8 @@ public class Professor{
         this.announcement = announcement;
         this.userName = userName;
         this.passwordHash = password.hashCode();
-        switch(school){
-            case 0: this.school = "Communication & the Arts";
-                break;
-            case 1: this.school = "Computer Science & Mathematics";
-                break;
-            case 2: this.school = "Global and Professional Programs";
-                break;
-            case 3: this.school = "Liberal Arts";
-                break;
-            case 4: this.school = "Management";
-                break;
-            case 5: this.school = "Science";
-                break;
-            case 6: this.school = "Social & Behavioral Sciences";
-                break;
-        }
-        setId();
+        this.school = school;
+        //setId();
     }
     
     public String getProfessor(){
@@ -76,13 +60,13 @@ public class Professor{
                     this.getLocation() + "\n" + this.getStatus();
     }
     
-    public Integer getId() {
+    /*public Integer getId() {
         return this.id;
-    }
+    }*/
     
-    private void setId() {
+    /*private void setId() {
         id = userName.hashCode();
-    }
+    }*/
     
     public String getFirstName(){
         return firstName;
@@ -155,7 +139,7 @@ public class Professor{
     
     public void setUserName(String un){
         userName = un;
-        setId();
+        //setId();
     }
     
     public int getPasswordHash(){
@@ -179,7 +163,8 @@ public class Professor{
     public String getSchool(){
         return this.school;
     }
-    /*public void setSchool(School school){
+    
+    public void setSchool(String school){
         this.school = school;
-    }*/
+    }
 }

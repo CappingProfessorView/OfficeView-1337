@@ -148,20 +148,23 @@ public class ProfessorSignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameFieldKeyPressed
 
     private void login(){
-        String un = UsernameField.getText();
+        String un = UsernameField.getText().toLowerCase();
         int pwh = new String(PasswordField.getPassword()).hashCode();
         //if(un.equals("") || pwh == 0){
-            Professor prof = OfficeView.professors.findOne("{userName: '" + un
-                    + "', passwordHash: "+ pwh +"}").as(Professor.class);
-            if(prof == null) {
-                JOptionPane.showMessageDialog(this,"The username or password you entered is incorrect");
-            }
-            else{
-                OfficeView.currentUserID = prof.getId();
-                ProfessorDashboard dash = new ProfessorDashboard();
-                dash.setVisible(true);
-                this.dispose();
-            }
+        if(un.equals("admin") && pwh == 70759573){
+            System.out.println("YOU ARE THE ADMIN");
+        }
+        Professor prof = OfficeView.professors.findOne("{userName: '" + un
+                + "', passwordHash: "+ pwh +"}").as(Professor.class);
+        if(prof == null) {
+            JOptionPane.showMessageDialog(this,"The username or password you entered is incorrect");
+        }
+        else{
+            //OfficeView.currentUserID = prof.getId();
+            ProfessorDashboard dash = new ProfessorDashboard(prof);
+            dash.setVisible(true);
+            this.dispose();
+        }
         //}
         //else{
             //System.out.println("Enter Correct Credentials");

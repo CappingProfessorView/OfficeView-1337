@@ -25,7 +25,7 @@ public class OfficeView {
     static MongoCollection professors;
     static Dimension screensize;
     static String image = "icon2.png";
-    static int currentUserID;
+    /*static int currentUserID;
     public enum School {
         COMMUNICATION_ARTS ("Communication & the Arts"),
         COMPUTER_SCIENCE_MATH ("Computer Science & Mathematics"),
@@ -39,7 +39,7 @@ public class OfficeView {
         School (String school){
             this.school = school;
         }
-    }
+    }*/
 
     /**
      * @param args the command line arguments
