@@ -27,6 +27,8 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         validate();
         parent = window;
         professor = prof;
+        nameLabel.setText(prof.getLastName());
+        availLabel.setText(prof.getStatus());
         //jLabel6.setText("Mayday this is not a test \n");
     }
 
@@ -42,9 +44,7 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         statusIcon = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
-        nameField = new javax.swing.JLabel();
-        locationLabel = new javax.swing.JLabel();
-        locationField = new javax.swing.JLabel();
+        availLabel = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(190, 100));
@@ -59,24 +59,15 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         jLayeredPane1.add(statusIcon, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         nameLabel.setText("Professor:");
-        nameLabel.setBounds(90, 20, 50, 14);
+        nameLabel.setBounds(90, 20, 63, 16);
         jLayeredPane1.add(nameLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        nameField.setText("jLabel1");
-        nameField.setBounds(150, 20, 34, 14);
-        jLayeredPane1.add(nameField, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        locationLabel.setText("Location:");
-        locationLabel.setBounds(90, 40, 44, 14);
-        jLayeredPane1.add(locationLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        locationField.setText("jLabel1");
-        locationField.setBounds(150, 40, 34, 14);
-        jLayeredPane1.add(locationField, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        availLabel.setText("Location:");
+        availLabel.setBounds(90, 40, 58, 16);
+        jLayeredPane1.add(availLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jButton2.setMaximumSize(new java.awt.Dimension(50, 29));
         jButton2.setMinimumSize(new java.awt.Dimension(50, 29));
-        jButton2.setOpaque(false);
         jButton2.setPreferredSize(new java.awt.Dimension(50, 29));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -99,7 +90,7 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,11 +130,9 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         this.i = i;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel availLabel;
     private javax.swing.JButton jButton2;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JLabel locationField;
-    private javax.swing.JLabel locationLabel;
-    private javax.swing.JLabel nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel statusIcon;
     // End of variables declaration//GEN-END:variables
