@@ -59,16 +59,15 @@ public class SingleProfessorResult extends javax.swing.JPanel {
         jLayeredPane1.add(statusIcon, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         nameLabel.setText("Professor:");
-        nameLabel.setBounds(90, 20, 50, 14);
+        nameLabel.setBounds(90, 20, 63, 16);
         jLayeredPane1.add(nameLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         availLabel.setText("Location:");
-        availLabel.setBounds(90, 40, 90, 14);
+        availLabel.setBounds(90, 40, 90, 16);
         jLayeredPane1.add(availLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jButton2.setMaximumSize(new java.awt.Dimension(50, 29));
         jButton2.setMinimumSize(new java.awt.Dimension(50, 29));
-        jButton2.setOpaque(false);
         jButton2.setPreferredSize(new java.awt.Dimension(50, 29));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
