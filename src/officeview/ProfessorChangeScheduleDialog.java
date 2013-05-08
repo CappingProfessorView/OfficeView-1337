@@ -434,6 +434,19 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_LocationBarActionPerformed
 
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+        prof.setLocation(LocationBar.getText());
+        prof.getSchedule().setMonday(setTimes(prof.getSchedule().getMonday(),0));
+        prof.getSchedule().setTuesday(setTimes(prof.getSchedule().getTuesday(),1));
+        prof.getSchedule().setWednesday(setTimes(prof.getSchedule().getWednesday(),2));
+        prof.getSchedule().setThursday(setTimes(prof.getSchedule().getThursday(),3));
+        prof.getSchedule().setFriday(setTimes(prof.getSchedule().getFriday(),4));
+        OfficeView.professors.remove("{\"userName\": #}",prof.getUserName());
+        OfficeView.professors.save(prof);
+        JOptionPane.showMessageDialog(this,"Schedule updated.");
+        this.dispose();
+    }//GEN-LAST:event_UpdateButtonActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         /*JPanel tab = (JPanel) ProfessorChangeScheduleTabList.getSelectedComponent();
         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
@@ -458,19 +471,6 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         }
         //repaint();*/
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-        prof.setLocation(LocationBar.getText());
-        prof.getSchedule().setMonday(setTimes(prof.getSchedule().getMonday(),0));
-        prof.getSchedule().setTuesday(setTimes(prof.getSchedule().getTuesday(),1));
-        prof.getSchedule().setWednesday(setTimes(prof.getSchedule().getWednesday(),2));
-        prof.getSchedule().setThursday(setTimes(prof.getSchedule().getThursday(),3));
-        prof.getSchedule().setFriday(setTimes(prof.getSchedule().getFriday(),4));
-        OfficeView.professors.remove("{\"userName\": #}",prof.getUserName());
-        OfficeView.professors.save(prof);
-        JOptionPane.showMessageDialog(this,"Schedule updated.");
-        this.dispose();
-    }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void createTimeRanges(Day day, int dayTab){
         TimeNode current = null;

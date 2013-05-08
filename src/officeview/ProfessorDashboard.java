@@ -294,10 +294,19 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         this.CurrentActiveStatus.setText("Available");
         this.Available.setSelected(true);
-        String profName = prof.getFirstName() + " " + prof.getLastName();
+        //String profName = prof.getFirstName() + " " + prof.getLastName
+        String firstLower = prof.getFirstName();
+        String lastLower = prof.getLastName();
+        String profFirstName = capitalize(firstLower);
+        String profLastName = capitalize(lastLower);
+        String profName = profFirstName + " " + profLastName;
+        //this.ProfessorDashboardNameLabel.setText(wordStr);
         this.ProfessorDashboardNameLabel.setText(profName);
     }//GEN-LAST:event_formWindowActivated
 
+    private String capitalize(String line) {
+        return Character.toUpperCase(line.charAt(0)) + line.substring(1);
+    }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         int choice = JOptionPane.showOptionDialog(this,
