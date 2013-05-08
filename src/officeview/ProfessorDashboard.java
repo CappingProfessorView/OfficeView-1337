@@ -28,6 +28,7 @@ public class ProfessorDashboard extends javax.swing.JFrame{
             adminMenu.setVisible(false);
         else if(prof.getIsAdmin())
             adminMenu.setVisible(true);
+        announcementText.setText(prof.getAnnouncement());
     }
 
     /**
@@ -42,6 +43,10 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         ProfessorDashboardSatusFrame = new javax.swing.JPanel();
         CurrentStatusLabel = new javax.swing.JLabel();
         CurrentActiveStatus = new javax.swing.JLabel();
+        announcementLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        announcementText = new javax.swing.JTextArea();
+        setButton = new javax.swing.JButton();
         ProfessorDashboardNameLabel = new javax.swing.JLabel();
         ProfessorDashboardMenu = new javax.swing.JMenuBar();
         ProfessorDashboardMenu_File = new javax.swing.JMenu();
@@ -78,11 +83,25 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         CurrentActiveStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CurrentActiveStatus.setText("Available");
 
+        announcementLabel.setText("Announcement:");
+
+        announcementText.setColumns(20);
+        announcementText.setRows(5);
+        jScrollPane1.setViewportView(announcementText);
+
+        setButton.setText("Set Announcement");
+        setButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ProfessorDashboardSatusFrameLayout = new javax.swing.GroupLayout(ProfessorDashboardSatusFrame);
         ProfessorDashboardSatusFrame.setLayout(ProfessorDashboardSatusFrameLayout);
         ProfessorDashboardSatusFrameLayout.setHorizontalGroup(
             ProfessorDashboardSatusFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfessorDashboardSatusFrameLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(ProfessorDashboardSatusFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ProfessorDashboardSatusFrameLayout.createSequentialGroup()
                         .addGap(111, 111, 111)
@@ -91,6 +110,18 @@ public class ProfessorDashboard extends javax.swing.JFrame{
                         .addGap(96, 96, 96)
                         .addComponent(CurrentActiveStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(105, 105, 105))
+            .addGroup(ProfessorDashboardSatusFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ProfessorDashboardSatusFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProfessorDashboardSatusFrameLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(ProfessorDashboardSatusFrameLayout.createSequentialGroup()
+                        .addComponent(announcementLabel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfessorDashboardSatusFrameLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(setButton))))
         );
         ProfessorDashboardSatusFrameLayout.setVerticalGroup(
             ProfessorDashboardSatusFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +130,13 @@ public class ProfessorDashboard extends javax.swing.JFrame{
                 .addComponent(CurrentStatusLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CurrentActiveStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(announcementLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(setButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ProfessorDashboardNameLabel.setText("Professor Name");
@@ -290,6 +327,15 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         popup.setVisible(true);
     }//GEN-LAST:event_editProfItemActionPerformed
 
+    private void setButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setButtonActionPerformed
+        // TODO add your handling code here:
+        prof.setAnnouncement(announcementText.getText());
+        OfficeView.professors.remove("{\"userName\": #}",prof.getUserName());
+        OfficeView.professors.save(prof);
+        JOptionPane.showMessageDialog(this,"Announcement updated");
+        
+    }//GEN-LAST:event_setButtonActionPerformed
+
     public Professor getProfessor(){
         return prof;
     }
@@ -342,8 +388,12 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     private javax.swing.JPopupMenu.Separator Separator;
     private javax.swing.JMenuItem addProfItem;
     private javax.swing.JMenu adminMenu;
+    private javax.swing.JLabel announcementLabel;
+    private javax.swing.JTextArea announcementText;
     private javax.swing.JMenuItem deleteProfItem;
     private javax.swing.JMenuItem editProfItem;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton setButton;
     // End of variables declaration//GEN-END:variables
 }
