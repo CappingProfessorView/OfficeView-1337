@@ -11,22 +11,21 @@ import java.text.DecimalFormat;
  * @author Mike
  */
 public class TimeNode{
-  
-  private int hourIn, minIn, hourOut, minOut;
-  private String periodIn, periodOut;
+   
+  private String periodIn, periodOut,hourIn, minIn, hourOut, minOut;
   private TimeNode next;
-  DecimalFormat minFormat = new DecimalFormat ("###00");
+  //DecimalFormat minFormat = new DecimalFormat ("###00");
   
   public TimeNode(){
-    hourIn = 0;
-    minIn = 0;
+    hourIn = "";
+    minIn = "";
     periodIn = "";
-    hourOut = 0;
-    minOut = 0;
+    hourOut = "";
+    minOut = "";
     periodOut = "";
   }
 
-  public TimeNode(int hourIn, int minIn, String periodIn, int hourOut, int minOut, String periodOut){
+  public TimeNode(String hourIn, String minIn, String periodIn, String hourOut, String minOut, String periodOut){
     this.hourIn = hourIn;
     this.minIn = minIn;
     this.periodIn = periodIn;
@@ -36,11 +35,11 @@ public class TimeNode{
     this.next = null;
   }
   
-  public int getHourIn(){
+  public String getHourIn(){
     return hourIn;
   }
 
-  public int getMinIn(){
+  public String getMinIn(){
     //String.format("%[B]02d[/B]",
     return minIn;
   }
@@ -49,11 +48,11 @@ public class TimeNode{
     return periodIn;
   }
   
-  public int getHourOut(){
+  public String getHourOut(){
     return hourOut;
   }
 
-  public int getMinOut(){
+  public String getMinOut(){
     return minOut;
   }
 
@@ -61,11 +60,11 @@ public class TimeNode{
     return periodOut;
   }
 
-  public void setHourIn(int n){
+  public void setHourIn(String n){
     hourIn = n;
   }
 
-  public void setMinIn(int n){
+  public void setMinIn(String n){
     minIn = n;
   }
 
@@ -73,11 +72,11 @@ public class TimeNode{
     periodIn = n;
   }
 
-  public void setHourOut(int n){
+  public void setHourOut(String n){
     hourOut = n;
   }
 
-  public void setMinOut(int n){
+  public void setMinOut(String n){
     minOut = n;
   }
 
@@ -134,7 +133,7 @@ public class TimeNode{
    * Adds a new node to end of list.
    * @param int to be stored in the new node
    */
-  public void add(int hin, int min, String pin, int hout, int mout, String pout){
+  public void add(String hin, String min, String pin, String hout, String mout, String pout){
     TimeNode next = new TimeNode(hin, min, pin, hout, mout, pout);
     getLast().setNext(next);
   }
@@ -148,8 +147,8 @@ public class TimeNode{
     int size = 0;
     TimeNode current = this;
     while(current != null){
-      times += minFormat.format(current.getHourIn()) + ":" + minFormat.format(current.getMinIn()) + " " + current.getPeriodIn() + " - " +
-        minFormat.format(current.getHourOut()) + ":" + minFormat.format(current.getMinOut()) + " " + current.getPeriodOut()+"<br>";
+      times += current.getHourIn() + ":" + current.getMinIn() + " " + current.getPeriodIn() + " - " +
+        current.getHourOut() + ":" + current.getMinOut() + " " + current.getPeriodOut()+"<br>";
       size++;
       current = current.next;
       //System.out.println(String.format("%[B]02d[/B]", x));  

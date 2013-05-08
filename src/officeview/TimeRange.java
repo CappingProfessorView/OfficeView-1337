@@ -21,6 +21,18 @@ public class TimeRange extends javax.swing.JPanel {
         setVisible(true);
         setSize(getPreferredSize());
     }
+    
+    public TimeRange(TimeNode node){
+        initComponents();
+        this.HrInBox.setSelectedItem(node.getHourIn());
+        this.MinInBox.setSelectedItem(node.getMinIn());
+        this.PeriodInBox.setSelectedItem(node.getPeriodIn());
+        this.HrOutBox.setSelectedItem(node.getHourOut());
+        this.MinOutBox.setSelectedItem(node.getMinOut());
+        this.PeriodOutBox.setSelectedItem(node.getPeriodOut());
+        setVisible(true);
+        setSize(getPreferredSize());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +59,7 @@ public class TimeRange extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(564, 28));
         setPreferredSize(new java.awt.Dimension(564, 28));
 
-        HrInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "--" }));
+        HrInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         HrInBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HrInBoxActionPerformed(evt);
@@ -56,14 +68,14 @@ public class TimeRange extends javax.swing.JPanel {
 
         jLabel1.setText(":");
 
-        MinInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45", "--" }));
+        MinInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
 
-        PeriodInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM", "--" }));
+        PeriodInBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
 
         jLabel21.setText("to");
         jLabel21.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        HrOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "--" }));
+        HrOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         HrOutBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HrOutBoxActionPerformed(evt);
@@ -72,9 +84,9 @@ public class TimeRange extends javax.swing.JPanel {
 
         jLabel4.setText(":");
 
-        MinOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45", "--" }));
+        MinOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "00", "15", "30", "45" }));
 
-        PeriodOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM", "--" }));
+        PeriodOutBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "AM", "PM" }));
 
         jButton1.setText("-");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,9 +109,9 @@ public class TimeRange extends javax.swing.JPanel {
                 .addComponent(MinInBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PeriodInBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
+                .addGap(116, 116, 116)
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(HrOutBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
@@ -141,12 +153,12 @@ public class TimeRange extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //ProfessorChangeScheduleDialog.delete();
             
-            this.HrInBox.setSelectedItem("--");
-            this.MinInBox.setSelectedItem("--");
-            this.PeriodInBox.setSelectedItem("--");
-            this.HrOutBox.setSelectedItem("--");
-            this.MinOutBox.setSelectedItem("--");
-            this.PeriodOutBox.setSelectedItem("--");
+            this.HrInBox.setSelectedItem(" ");
+            this.MinInBox.setSelectedItem(" ");
+            this.PeriodInBox.setSelectedItem(" ");
+            this.HrOutBox.setSelectedItem(" ");
+            this.MinOutBox.setSelectedItem(" ");
+            this.PeriodOutBox.setSelectedItem(" ");
         //this.getParent().revalidate();
         //repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -154,10 +166,14 @@ public class TimeRange extends javax.swing.JPanel {
     /**
      *
      */
-    public ArrayList<JComboBox> getComboValues(){
-        ArrayList<JComboBox> arr = new ArrayList<JComboBox>();
-        arr.add(this.HrInBox);arr.add(this.MinInBox);arr.add(this.PeriodInBox);
-        arr.add(this.HrOutBox);arr.add(this.MinOutBox);arr.add(this.PeriodOutBox);
+    public ArrayList<String> getComboValues(){
+        ArrayList<String> arr = new ArrayList<String>();
+        arr.add((String)this.HrInBox.getSelectedItem());
+        arr.add((String)this.MinInBox.getSelectedItem());
+        arr.add((String)this.PeriodInBox.getSelectedItem());
+        arr.add((String)this.HrOutBox.getSelectedItem());
+        arr.add((String)this.MinOutBox.getSelectedItem());
+        arr.add((String)this.PeriodOutBox.getSelectedItem());
         return arr;
     }
     

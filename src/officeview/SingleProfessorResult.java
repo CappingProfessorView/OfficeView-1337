@@ -22,8 +22,8 @@ public class SingleProfessorResult extends javax.swing.JPanel {
     //private static Professor prof = OfficeView.professors.findOne("{id: #}",OfficeView.currentUserID).as(Professor.class);
     public SingleProfessorResult(ProfessorResultsWindow2 window, Professor prof) {
         initComponents();
-        setVisible(true);
         setSize(getPreferredSize());
+        setVisible(true);
         validate();
         parent = window;
         professor = prof;

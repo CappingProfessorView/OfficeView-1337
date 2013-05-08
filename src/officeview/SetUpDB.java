@@ -38,8 +38,10 @@ public class SetUpDB {
         professors.drop();
         
         Professor professor = new Professor("steve","smith",null,null,"","steve.smith", "bluh", "Liberal Arts");
-        TimeNode sst1 = new TimeNode(1,0,"pm",3,30,"pm");
-        TimeNode sst2 = new TimeNode(2,0,"pm",3,0,"pm");
+        TimeNode sst1 = new TimeNode("1","00","PM","3","30","PM");
+        TimeNode sst1_5 = new TimeNode("5","00","PM","6","15","PM");
+        sst1.setNext(sst1_5);
+        TimeNode sst2 = new TimeNode("2","00","PM","3","00","PM");
         Day ssmonday = new Day();
         Day ssthursday = new Day();
         Schedule sssched = new Schedule();
@@ -50,7 +52,7 @@ public class SetUpDB {
         professor.setSchedule(sssched);
         
         Professor professor2 = new Professor("ron","coleman",null,null,"","ron.coleman", "ronspw","Computer Science & Mathematics");
-        TimeNode rct1 = new TimeNode(4,0,"pm",6,0,"pm");
+        TimeNode rct1 = new TimeNode("4","00","PM","6","00","PM");
         Day rcmonday = new Day();
         Day rctuesday = new Day();
         Schedule rcsched = new Schedule();
@@ -64,11 +66,13 @@ public class SetUpDB {
         Professor professor3 = new Professor("alan","labouseur",null,null,"","alan.labouseur", "axq1u","Computer Science & Mathematics");
         Professor professor4 = new Professor("ben","carle",null,null,"","ben.carle", "redE4anything","Computer Science & Mathematics");
         Professor professor5 = new Professor("robert","smith",null,null,"","robert.smith", "teddyBear","Management");
+        Professor professor6 = new Professor("bob","smith",null,null,"","bob.smith", "hello","Computer Science & Mathematics");
         
         professors.save(professor);
         professors.save(professor2);
         professors.save(professor3);
         professors.save(professor4);
         professors.save(professor5);
+        professors.save(professor6);
     }
 }

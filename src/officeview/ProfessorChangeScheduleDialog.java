@@ -7,8 +7,6 @@ package officeview;
 import java.awt.Component;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -35,16 +33,19 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
         this.prof = prof;
         Schedule profSched = prof.getSchedule();
-        /*for (int i=0;i<5;i++){
-         TimeRange temp = new TimeRange();
-         JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
-         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
-         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
-         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
-         for(Day day : profSched){
-            
-         } 
-         }*/
+        createTimeRanges(profSched.getMonday(),0);
+        createTimeRanges(profSched.getTuesday(),1);
+        createTimeRanges(profSched.getWednesday(),2);
+        createTimeRanges(profSched.getThursday(),3);
+        createTimeRanges(profSched.getFriday(),4);
+//        for (int i=0;i<5;i++){
+//            TimeRange temp = new TimeRange();
+//            JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
+//            JScrollPane scrollPane = (JScrollPane) tab.getComponent(2); 
+//            JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+//            JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+//
+//         }
 
 
     }
@@ -104,6 +105,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         MondayScrollPane.setPreferredSize(new java.awt.Dimension(492, 19));
 
         MondayInnerPanel.setBackground(new java.awt.Color(204, 204, 204));
+        MondayInnerPanel.setMaximumSize(new java.awt.Dimension(32767, 99999));
 
         javax.swing.GroupLayout MondayInnerPanelLayout = new javax.swing.GroupLayout(MondayInnerPanel);
         MondayInnerPanel.setLayout(MondayInnerPanelLayout);
@@ -336,6 +338,11 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         ProfessorChangeScheduleTabList.addTab("Friday", Friday);
 
         UpdateButton.setText("Update");
+        UpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateButtonActionPerformed(evt);
+            }
+        });
 
         AddTime.setText("+");
         AddTime.addActionListener(new java.awt.event.ActionListener() {
@@ -414,7 +421,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
             innerPanel.add(temp).setLocation(0, 30 * i+1);
             innerPanel.validate();
         }*/
-        
+        //scrollView.setSize(scrollView.getSize().width,scrollView.getSize().height+30);
+        //innerPanel.setSize(innerPanel.getSize().width,innerPanel.getSize().height+30);
         innerPanel.add(temp).setLocation(0, 30 * count + 1);
         innerPanel.validate();
     }//GEN-LAST:event_AddTimeActionPerformed
@@ -424,7 +432,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_LocationBarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JPanel tab = (JPanel) ProfessorChangeScheduleTabList.getSelectedComponent();
+        /*JPanel tab = (JPanel) ProfessorChangeScheduleTabList.getSelectedComponent();
         JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
         JViewport scrollView = (JViewport) scrollPane.getComponent(0);
         JPanel innerPanel = (JPanel) scrollView.getComponent(0);
@@ -443,11 +451,87 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
                     isBlank = false;
                 }
             }
-                //System.out.println(temp.getComboValue().get(i).getSelectedItem());
+            //System.out.println(temp.getComboValue().get(i).getSelectedItem());
         }
-        //repaint();
+        //repaint();*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+
+        prof.getSchedule().setMonday(setTimes(prof.getSchedule().getMonday(),0));
+        prof.getSchedule().setTuesday(setTimes(prof.getSchedule().getTuesday(),1));
+        prof.getSchedule().setWednesday(setTimes(prof.getSchedule().getWednesday(),2));
+        prof.getSchedule().setThursday(setTimes(prof.getSchedule().getThursday(),3));
+        prof.getSchedule().setFriday(setTimes(prof.getSchedule().getFriday(),4));
+        OfficeView.professors.remove("{\"userName\": #}",prof.getUserName());
+        OfficeView.professors.save(prof);
+    }//GEN-LAST:event_UpdateButtonActionPerformed
+
+    private void createTimeRanges(Day day, int dayTab){
+        TimeNode current = null;
+        if(day != null)
+            current = day.getTimes();
+        JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(dayTab);
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
+        JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+        JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+        int count;
+        
+        while (current!=null){
+            count = innerPanel.getComponentCount();
+            TimeRange temp = new TimeRange(current);
+            innerPanel.add(temp).setLocation(0, 30 * count + 1);
+            innerPanel.validate();
+            current = current.getNext();
+        }
+    }
+   
+    private Day setTimes(Day day, int i){
+        if(day != null)
+            day.setTimes(null);
+        else
+            day = new Day();
+        JPanel tab = (JPanel)ProfessorChangeScheduleTabList.getComponent(i);
+        JScrollPane scrollPane = (JScrollPane) tab.getComponent(2);
+        JViewport scrollView = (JViewport) scrollPane.getComponent(0);
+        JPanel innerPanel = (JPanel) scrollView.getComponent(0);
+        Component rangeList[] = innerPanel.getComponents();
+        for (int j=0;j<rangeList.length;j++){
+            TimeRange tempRange = (TimeRange) rangeList[j];
+            ArrayList valueList = tempRange.getComboValues();
+            if(valueList.get(0).equals(" ") &&
+                    valueList.get(1).equals(" ") &&
+                    valueList.get(2).equals(" ") &&
+                    valueList.get(3).equals(" ") &&
+                    valueList.get(4).equals(" ")&&
+                    valueList.get(5).equals(" "))
+                continue;
+            if(valueList.get(0).equals(" ") ||
+                    valueList.get(1).equals(" ") ||
+                    valueList.get(2).equals(" ") ||
+                    valueList.get(3).equals(" ") ||
+                    valueList.get(4).equals(" ") ||
+                    valueList.get(5).equals(" ")){
+                JOptionPane.showMessageDialog(this,"Please fill in all fields");
+                break;
+            }
+            if(j == 0){
+                TimeNode tempNode = new TimeNode((String)valueList.get(0),
+                    (String)valueList.get(1), (String)valueList.get(2),
+                    (String)valueList.get(3),(String)valueList.get(4),
+                    (String)valueList.get(5));
+                day.setTimes(tempNode);
+            }
+            else{
+                day.getTimes().add((String)valueList.get(0),
+                        (String)valueList.get(1), (String)valueList.get(2),
+                        (String)valueList.get(3),(String)valueList.get(4),
+                        (String)valueList.get(5));
+            }
+        }
+        return day;
+    }
+    
     /**
      * @param args the command line arguments
      */

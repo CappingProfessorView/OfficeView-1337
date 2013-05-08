@@ -37,9 +37,9 @@
               <Component id="MinInBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="PeriodInBox" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="117" max="32767" attributes="0"/>
               <Component id="HrOutBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -78,7 +78,7 @@
     <Component class="javax.swing.JComboBox" name="HrInBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="14">
+          <StringArray count="13">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="1"/>
             <StringItem index="2" value="2"/>
@@ -92,7 +92,6 @@
             <StringItem index="10" value="10"/>
             <StringItem index="11" value="11"/>
             <StringItem index="12" value="12"/>
-            <StringItem index="13" value="--"/>
           </StringArray>
         </Property>
       </Properties>
@@ -108,13 +107,12 @@
     <Component class="javax.swing.JComboBox" name="MinInBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="5">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="00"/>
             <StringItem index="2" value="15"/>
             <StringItem index="3" value="30"/>
             <StringItem index="4" value="45"/>
-            <StringItem index="5" value="--"/>
           </StringArray>
         </Property>
       </Properties>
@@ -122,11 +120,10 @@
     <Component class="javax.swing.JComboBox" name="PeriodInBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
+          <StringArray count="3">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="AM"/>
             <StringItem index="2" value="PM"/>
-            <StringItem index="3" value="--"/>
           </StringArray>
         </Property>
       </Properties>
@@ -140,7 +137,7 @@
     <Component class="javax.swing.JComboBox" name="HrOutBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="14">
+          <StringArray count="13">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="1"/>
             <StringItem index="2" value="2"/>
@@ -154,7 +151,6 @@
             <StringItem index="10" value="10"/>
             <StringItem index="11" value="11"/>
             <StringItem index="12" value="12"/>
-            <StringItem index="13" value="--"/>
           </StringArray>
         </Property>
       </Properties>
@@ -170,13 +166,12 @@
     <Component class="javax.swing.JComboBox" name="MinOutBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="5">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="00"/>
             <StringItem index="2" value="15"/>
             <StringItem index="3" value="30"/>
             <StringItem index="4" value="45"/>
-            <StringItem index="5" value="--"/>
           </StringArray>
         </Property>
       </Properties>
@@ -184,11 +179,10 @@
     <Component class="javax.swing.JComboBox" name="PeriodOutBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
+          <StringArray count="3">
             <StringItem index="0" value=" "/>
             <StringItem index="1" value="AM"/>
             <StringItem index="2" value="PM"/>
-            <StringItem index="3" value="--"/>
           </StringArray>
         </Property>
       </Properties>
