@@ -27,10 +27,10 @@ public class Professor{
     private String firstName = null;
     private String lastName = null;
     private Schedule schedule = null;
-    private String announcement = null;
+    private String announcement = "";
     private String userName = null;
     private int passwordHash = 0;
-    private String location = null;
+    private String location = "";
     private String school = "";
     private boolean isAdmin;
     /* status key: 
@@ -162,10 +162,12 @@ public class Professor{
     public String toString (){
         if(this.getSchedule() != null){
             return "<html>" + this.getFirstName() + " " + this.getLastName() + "<br>" + 
-                    this.getStatus() + "<br>" + this.getSchedule() + this.getSchool() + "</html>";
+                    this.getStatus() + "<br>" + this.getSchedule() + this.getLocation() +
+                    "<br>" +this.getSchool() + "<br>" + this.getAnnouncement() + "</html>";
         }
         return "<html>" + this.getFirstName() + " " + this.getLastName() + "<br>" +
-                this.getStatus() + "<br>Office hours not available.<br>" + this.getSchool() + "</html>";
+                this.getStatus() + "<br>Office hours not available.<br>" + this.getSchool() + 
+                "<br>" + this.getAnnouncement() + "</html>";
     }
     
     public String getSchool(){
