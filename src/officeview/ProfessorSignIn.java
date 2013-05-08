@@ -152,8 +152,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         int pwh = new String(PasswordField.getPassword()).hashCode();
         //if(un.equals("") || pwh == 0){
         
-        Professor prof = OfficeView.professors.findOne("{userName: '" + un
-                + "', passwordHash: "+ pwh +"}").as(Professor.class);
+        Professor prof = OfficeView.professors.findOne("{\"userName\": #, \"passwordHash\": #}",un,pwh).as(Professor.class);
         if(prof == null) {
             JOptionPane.showMessageDialog(this,"The username or password you entered is incorrect");
         }

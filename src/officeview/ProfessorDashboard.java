@@ -4,10 +4,8 @@
  */
 package officeview;
 
-import java.awt.PopupMenu;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
-import javax.swing.JWindow;
 
 /**
  *
@@ -51,10 +49,13 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         Busy = new javax.swing.JRadioButtonMenuItem();
         BeBackSoon = new javax.swing.JRadioButtonMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Office View - Dashboard");
         setName("Professor Dashboard Main Frame"); // NOI18N
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
@@ -178,6 +179,8 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         this.Busy.setSelected(false);
         this.BeBackSoon.setSelected(false);
         this.CurrentActiveStatus.setText("Available");
+        prof.setStatus(1);
+        OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 1}}");
     }//GEN-LAST:event_AvailableActionPerformed
 
     private void BusyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusyActionPerformed
@@ -185,6 +188,8 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         this.Busy.setSelected(true);
         this.BeBackSoon.setSelected(false);
         this.CurrentActiveStatus.setText("Busy");
+        prof.setStatus(2);
+        OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 2}}");
     }//GEN-LAST:event_BusyActionPerformed
 
     private void BeBackSoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeBackSoonActionPerformed
@@ -192,6 +197,8 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         this.Busy.setSelected(false);
         this.BeBackSoon.setSelected(true);
         this.CurrentActiveStatus.setText("Be Back Soon");
+        prof.setStatus(3);
+        OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 3}}");
     }//GEN-LAST:event_BeBackSoonActionPerformed
 
     private void ScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleActionPerformed
@@ -203,7 +210,8 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         //***TODO:Set professor status and other things***
         int choice = JOptionPane.showConfirmDialog(this, "Do you wish to sign out?");
         if (choice == JOptionPane.YES_OPTION){
-            
+            prof.setStatus(0);
+            OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 0}}");
             this.dispose();
         }
     }//GEN-LAST:event_LogoutActionPerformed
@@ -214,6 +222,18 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         String profName = prof.getFirstName() + " " + prof.getLastName();
         this.ProfessorDashboardNameLabel.setText(profName);
     }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        int choice = JOptionPane.showOptionDialog(this,
+                "Do you wish to sign out?", "Logout",
+                JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+        if (choice == JOptionPane.YES_OPTION){
+            prof.setStatus(0);
+            OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 0}}");
+            this.dispose();
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     public Professor getProfessor(){
         return prof;
