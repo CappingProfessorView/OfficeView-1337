@@ -32,6 +32,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         setLocation((OfficeView.screensize.width / 2 - (this.getWidth() / 2)), (OfficeView.screensize.height / 2 - (this.getHeight() / 2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
         this.prof = prof;
+        LocationBar.setText(prof.getLocation());
         Schedule profSched = prof.getSchedule();
         if(profSched == null)
             profSched = new Schedule();
@@ -459,7 +460,7 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-
+        prof.setLocation(LocationBar.getText());
         prof.getSchedule().setMonday(setTimes(prof.getSchedule().getMonday(),0));
         prof.getSchedule().setTuesday(setTimes(prof.getSchedule().getTuesday(),1));
         prof.getSchedule().setWednesday(setTimes(prof.getSchedule().getWednesday(),2));
@@ -467,6 +468,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         prof.getSchedule().setFriday(setTimes(prof.getSchedule().getFriday(),4));
         OfficeView.professors.remove("{\"userName\": #}",prof.getUserName());
         OfficeView.professors.save(prof);
+        JOptionPane.showMessageDialog(this,"Schedule updated.");
+        this.dispose();
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void createTimeRanges(Day day, int dayTab){
