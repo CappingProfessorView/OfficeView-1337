@@ -151,9 +151,7 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         String un = UsernameField.getText().toLowerCase();
         int pwh = new String(PasswordField.getPassword()).hashCode();
         //if(un.equals("") || pwh == 0){
-        if(un.equals("admin") && pwh == 70759573){
-            System.out.println("YOU ARE THE ADMIN");
-        }
+        
         Professor prof = OfficeView.professors.findOne("{userName: '" + un
                 + "', passwordHash: "+ pwh +"}").as(Professor.class);
         if(prof == null) {
@@ -161,6 +159,8 @@ public class ProfessorSignIn extends javax.swing.JFrame {
         }
         else{
             //OfficeView.currentUserID = prof.getId();
+            prof.setStatus(1);
+            OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 1}}");
             ProfessorDashboard dash = new ProfessorDashboard(prof);
             dash.setVisible(true);
             this.dispose();

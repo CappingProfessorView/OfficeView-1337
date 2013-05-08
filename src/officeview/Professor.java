@@ -113,14 +113,19 @@ public class Professor{
         this.location = loc;
     }
     
+    public void setStatus(int status){
+        this.status = status;
+    }
+    
     public String getStatus(){
         String temp = "";
         switch(this.status)
         {
-            case '1': temp =  "Available"; break;
-            case '2': temp =  "Busy"; break;
-            case '3': temp =  "Be Back Soon"; break;
-            default: temp =  "Not Available";
+            case 0: temp = "Not Available"; break;
+            case 1: temp =  "Available"; break;
+            case 2: temp =  "Busy"; break;
+            case 3: temp =  "Be Back Soon"; break;
+            default: temp =  "Not Available"; break;
                 
         }
         return temp;
