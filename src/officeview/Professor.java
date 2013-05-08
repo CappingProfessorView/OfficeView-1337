@@ -32,6 +32,7 @@ public class Professor{
     private int passwordHash = 0;
     private String location = null;
     private String school = "";
+    private boolean isAdmin;
     /* status key: 
      * 0 = not available
      * 1 = available
@@ -43,7 +44,8 @@ public class Professor{
     public Professor(){}
     
     public Professor(String firstName, String lastName, String location, Schedule schedule, 
-                    String announcement, String userName, String password, String school){
+                    String announcement, String userName, String password, String school,
+                    boolean isAdmin){
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
@@ -52,6 +54,7 @@ public class Professor{
         this.userName = userName;
         this.passwordHash = password.hashCode();
         this.school = school;
+        this.isAdmin = isAdmin;
         //setId();
     }
     
@@ -171,5 +174,13 @@ public class Professor{
     
     public void setSchool(String school){
         this.school = school;
+    }
+    
+    public boolean getIsAdmin(){
+        return isAdmin;
+    }
+    
+    public void setIsAdmin(boolean set){
+        isAdmin = set;
     }
 }

@@ -37,7 +37,7 @@ public class SetUpDB {
         //MongoHelper.getCollection("professors").drop();
         professors.drop();
         
-        Professor professor = new Professor("steve","smith",null,null,"","steve.smith", "bluh", "Liberal Arts");
+        Professor professor = new Professor("steve","smith",null,null,"","steve.smith", "stevespw", "Liberal Arts", false);
         TimeNode sst1 = new TimeNode("1","00","PM","3","30","PM");
         TimeNode sst1_5 = new TimeNode("5","00","PM","6","15","PM");
         sst1.setNext(sst1_5);
@@ -51,7 +51,7 @@ public class SetUpDB {
         ssthursday.setTimes(sst2);
         professor.setSchedule(sssched);
         
-        Professor professor2 = new Professor("ron","coleman",null,null,"","ron.coleman", "ronspw","Computer Science & Mathematics");
+        Professor professor2 = new Professor("ron","coleman",null,null,"","ron.coleman", "ronspw","Computer Science & Mathematics", false);
         TimeNode rct1 = new TimeNode("4","00","PM","6","00","PM");
         Day rcmonday = new Day();
         Day rctuesday = new Day();
@@ -63,10 +63,11 @@ public class SetUpDB {
         professor2.setSchedule(rcsched);
         
         
-        Professor professor3 = new Professor("alan","labouseur",null,null,"","alan.labouseur", "axq1u","Computer Science & Mathematics");
-        Professor professor4 = new Professor("ben","carle",null,null,"","ben.carle", "redE4anything","Computer Science & Mathematics");
-        Professor professor5 = new Professor("robert","smith",null,null,"","robert.smith", "teddyBear","Management");
-        Professor professor6 = new Professor("bob","smith",null,null,"","bob.smith", "hello","Computer Science & Mathematics");
+        Professor professor3 = new Professor("alan","labouseur",null,null,"","alan.labouseur", "alanspw","Computer Science & Mathematics", false);
+        Professor professor4 = new Professor("ben","carle",null,null,"","ben.carle", "benspw","Computer Science & Mathematics", false);
+        Professor professor5 = new Professor("robert","smith",null,null,"","robert.smith", "robertspw","Management", false);
+        Professor professor6 = new Professor("bob","smith",null,null,"","bob.smith", "bobspw","Computer Science & Mathematics", false);
+        Professor admin = new Professor("","Administrator",null,null,"","admin","analpacaatemybanana1","",true);
         
         professors.save(professor);
         professors.save(professor2);
@@ -74,5 +75,6 @@ public class SetUpDB {
         professors.save(professor4);
         professors.save(professor5);
         professors.save(professor6);
+        professors.save(admin);
     }
 }

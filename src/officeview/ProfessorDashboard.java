@@ -24,6 +24,10 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         initComponents();
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
+        if(!prof.getIsAdmin())
+            adminMenu.setVisible(false);
+        else if(prof.getIsAdmin())
+            adminMenu.setVisible(true);
     }
 
     /**
@@ -48,6 +52,10 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         Available = new javax.swing.JRadioButtonMenuItem();
         Busy = new javax.swing.JRadioButtonMenuItem();
         BeBackSoon = new javax.swing.JRadioButtonMenuItem();
+        adminMenu = new javax.swing.JMenu();
+        addProfItem = new javax.swing.JMenuItem();
+        deleteProfItem = new javax.swing.JMenuItem();
+        editProfItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Office View - Dashboard");
@@ -146,6 +154,34 @@ public class ProfessorDashboard extends javax.swing.JFrame{
 
         ProfessorDashboardMenu.add(jMenu3);
 
+        adminMenu.setText("Admin");
+
+        addProfItem.setText("Add Professors");
+        addProfItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addProfItemActionPerformed(evt);
+            }
+        });
+        adminMenu.add(addProfItem);
+
+        deleteProfItem.setText("Delete Professors");
+        deleteProfItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteProfItemActionPerformed(evt);
+            }
+        });
+        adminMenu.add(deleteProfItem);
+
+        editProfItem.setText("Edit Professors");
+        editProfItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editProfItemActionPerformed(evt);
+            }
+        });
+        adminMenu.add(editProfItem);
+
+        ProfessorDashboardMenu.add(adminMenu);
+
         setJMenuBar(ProfessorDashboardMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,6 +273,23 @@ public class ProfessorDashboard extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_formWindowClosing
 
+    private void deleteProfItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfItemActionPerformed
+        DeleteProfessorDialog popup = new DeleteProfessorDialog(prof);
+        popup.setVisible(true);
+    }//GEN-LAST:event_deleteProfItemActionPerformed
+
+    private void addProfItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProfItemActionPerformed
+        // TODO add your handling code here:
+        AddProfessorDialog popup = new AddProfessorDialog();
+        popup.setVisible(true);
+    }//GEN-LAST:event_addProfItemActionPerformed
+
+    private void editProfItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfItemActionPerformed
+        // TODO add your handling code here:
+        EditProfessor1 popup = new EditProfessor1();
+        popup.setVisible(true);
+    }//GEN-LAST:event_editProfItemActionPerformed
+
     public Professor getProfessor(){
         return prof;
     }
@@ -287,6 +340,10 @@ public class ProfessorDashboard extends javax.swing.JFrame{
     private javax.swing.JPanel ProfessorDashboardSatusFrame;
     private javax.swing.JMenuItem Schedule;
     private javax.swing.JPopupMenu.Separator Separator;
+    private javax.swing.JMenuItem addProfItem;
+    private javax.swing.JMenu adminMenu;
+    private javax.swing.JMenuItem deleteProfItem;
+    private javax.swing.JMenuItem editProfItem;
     private javax.swing.JMenu jMenu3;
     // End of variables declaration//GEN-END:variables
 }
