@@ -208,7 +208,9 @@ public class ProfessorDashboard extends javax.swing.JFrame{
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         //***TODO:Set professor status and other things***
-        int choice = JOptionPane.showConfirmDialog(this, "Do you wish to sign out?");
+        int choice = JOptionPane.showOptionDialog(this,
+                "Do you wish to sign out?", "Logout",
+                JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
         if (choice == JOptionPane.YES_OPTION){
             prof.setStatus(0);
             OfficeView.professors.update("{\"userName\": #}",prof.getUserName()).with("{$set:{\"status\": 0}}");
