@@ -33,6 +33,8 @@ public class ProfessorChangeScheduleDialog extends javax.swing.JDialog {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
         this.prof = prof;
         Schedule profSched = prof.getSchedule();
+        if(profSched == null)
+            profSched = new Schedule();
         createTimeRanges(profSched.getMonday(),0);
         createTimeRanges(profSched.getTuesday(),1);
         createTimeRanges(profSched.getWednesday(),2);
