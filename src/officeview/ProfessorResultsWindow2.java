@@ -30,19 +30,26 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
         setLocation((OfficeView.screensize.width/2 - (this.getWidth()/2)), (OfficeView.screensize.height/2 - (this.getHeight()/2)));
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(OfficeView.image)));
         int i = 0;
+        JViewport viewPort = jScrollPane2.getViewport();
         while (results.hasNext()){
             Professor tmpProf = results.next();
             if(i == 0)
                 profsLabel.setText(tmpProf.toString());
             //profList.add(tmpProf.toString());
-            SingleProfessorResult temp = new SingleProfessorResult(this,tmpProf);
-            JViewport viewPort = (JViewport)jScrollPane2.getComponent(0);
-            JLayeredPane innerPanel = (JLayeredPane) viewPort.getComponent(0);
-            innerPanel.add(temp).setLocation(0,i*100);
-            innerPanel.validate();
-            innerPanel.repaint();
+            SingleProfessorResult tempProf = new SingleProfessorResult(this,tmpProf);
+            JPanel tempPanel = new JPanel();
+            tempPanel.add(tempProf);
+            tempPanel.validate();
+            //JLayeredPane innerPanel = (JLayeredPane) viewPort.getComponent(0);
+            viewPort.setVisible(true);
+            viewPort.setOpaque(false);
+            viewPort.add(tempPanel).setLocation(0,i*100);
+            viewPort.validate();
+            viewPort.repaint();
             i++;
+            
         }
+        System.out.println(viewPort.getView().toString());
     }
     
     public void setProfsLabel(String s){
@@ -60,27 +67,29 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         profsLabel = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jScrollPane2.setViewportView(jLayeredPane2);
-
-        jScrollPane2.setBounds(0, 0, 190, 300);
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setBounds(0, 0, 220, 300);
         jLayeredPane1.add(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(profsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(profsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,10 +102,8 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
 
         jScrollPane1.setViewportView(jPanel1);
 
-        jScrollPane1.setBounds(190, 0, 410, 300);
+        jScrollPane1.setBounds(220, 0, 380, 300);
         jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,9 +113,7 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
 
         pack();
@@ -157,8 +162,6 @@ public class ProfessorResultsWindow2 extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
